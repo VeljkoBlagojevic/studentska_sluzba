@@ -1,10 +1,12 @@
 package rs.fon.studentska_sluzba.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Student;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
 
+import java.security.Security;
 import java.util.List;
 
 @Service
@@ -18,5 +20,9 @@ public class StudentService {
     @Autowired
     public List<Student> findAll() {
         return studentRepository.findAll();
+    }
+
+    public Student getTrenutniStudent() {
+        return (Student) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 }

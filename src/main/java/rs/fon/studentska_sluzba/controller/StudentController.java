@@ -26,4 +26,9 @@ public class StudentController {
         return ResponseEntity.ok(studentService.findAll());
     }
 
+    @GetMapping("trenutni")
+    public ResponseEntity<Student> getTrenutniStudent() {
+        return ResponseEntity.ok(studentService.getTrenutniStudent());
+    }
+
 }

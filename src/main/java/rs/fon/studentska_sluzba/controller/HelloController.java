@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1")
 public class HelloController {
+
+
+    //Testni kontroler za probu
     @GetMapping("hello")
     public ResponseEntity<String> hello() {
         return ResponseEntity.ok("hello");
