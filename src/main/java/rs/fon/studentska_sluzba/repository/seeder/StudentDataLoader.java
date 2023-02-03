@@ -1,8 +1,10 @@
 package rs.fon.studentska_sluzba.repository.seeder;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import rs.fon.studentska_sluzba.domain.Grad;
+import rs.fon.studentska_sluzba.domain.Role;
 import rs.fon.studentska_sluzba.domain.Student;
 import rs.fon.studentska_sluzba.repository.GradRepository;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
@@ -37,7 +39,8 @@ public class StudentDataLoader implements CommandLineRunner {
                     .licniEmail("veljkoblagojevic008@gmail.com")
                     .brojTelefona("+381677116969")
                     .username("vb20190353")
-                    .password("velja123")
+                    .password(new BCryptPasswordEncoder().encode("velja123"))
+                    .role(Role.USER)
                     .build();
 
             studentRepository.save(veljko);

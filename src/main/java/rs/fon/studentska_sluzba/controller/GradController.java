@@ -3,6 +3,8 @@ package rs.fon.studentska_sluzba.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import rs.fon.studentska_sluzba.domain.Grad;
 import rs.fon.studentska_sluzba.service.GradService;
@@ -22,6 +24,8 @@ public class GradController {
 
     @GetMapping
     public ResponseEntity<List<Grad>> getAll() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(authentication);
         return ResponseEntity.ok(gradService.findAll());
     }
 
