@@ -1,0 +1,127 @@
+.SideBar2{
+  width: 16%;
+  padding-left: 20px;
+  border-color: rgba(174, 25, 25, 0.907);
+  border-width: 10px;
+}
+
+.CenterComponent{
+  width: 80%;
+  height: 100%;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.Page{
+  display: inline;
+  font-family: cursive;
+}
+
+.NavBar{
+  width: 100%;
+  height: 90px;
+  background-color: rgba(178, 41, 41, 0.853);
+  display: inline-block;
+}
+
+nav{
+  display: flex;
+}
+
+.TopNavBar{
+  display: flex;
+}
+
+.Main{
+  display: flex;
+  height: 100vh;
+}
+
+.Login{
+  width: 50%;
+  height: 50%;
+  margin-left: 20%;
+}
+
+#slika{
+  padding-left: 1cm;
+  width: 192px;
+  height: 90px;
+}
+
+table{
+  padding-left: 0px;
+  border: 1px solid;
+
+}
+
+tr{
+  transition: 0.8s;
+}
+
+tr:hover {
+  background-color: rgba(178, 41, 41, 0.853);
+}
+
+#logout{
+  width: 40px;
+  height: 40px;
+}
+
+.Logout{
+  width: 40px;
+  height: 40px;
+  padding-left: 70%;
+  padding-top: 1%;
+  display: inline-block;
+}
+
+#Logout:hover{
+  width: 42px;
+  height: 42px;
+}
+
+.statusMolbe{
+  width: 150px;
+  border: 0px;
+  background-color: #eeeaea;
+  transition: 0.8s;
+}
+
+.statusMolbe:hover{
+  background-color: rgba(178, 41, 41, 0.853);
+}
+
+#flexCheckDefault{
+  margin-left: 20px;
+}
+
+.btnLogout{
+  width: 204px;
+  background-color: white;
+}
+
+button{
+  background-color: white;
+}
+
+.obavestenja{
+  width: 100%;
+  height: 100%;
+}
+
+.post{
+  border-radius: 25px;
+  background: rgba(178, 41, 41, 0.853);
+  padding: 20px;
+  width: 100%;
+  height: 150px;
+}
+
+
+
+
+
+
+
+
