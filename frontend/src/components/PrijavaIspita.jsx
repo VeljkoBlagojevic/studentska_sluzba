@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function PrijavaIspita() {
+    
+    axios({
+        method: 'get',
+        url: '/api/v1/predmeti/slusa',
+        baseURL: 'http://localhost:8080',
+        headers: {Authorization: 'fsdf'}
+      }).then((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error);
+      });
   return (
     <div className='PrijavaIspita'>
         <h1>Prijava ispita</h1>

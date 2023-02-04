@@ -13,6 +13,8 @@ import MojiPredmeti from './components/MojiPredmeti';
 import Upis from './components/Upis';
 import Obavestenja from './components/Obavestenja';
 
+const urlBase = "localhost:8080";
+
 function App() {
   return (
     <div class='Page'>
