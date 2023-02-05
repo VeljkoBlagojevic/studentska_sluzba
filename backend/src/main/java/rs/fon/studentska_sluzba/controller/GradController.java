@@ -3,10 +3,9 @@ package rs.fon.studentska_sluzba.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.studentska_sluzba.domain.Grad;
+import rs.fon.studentska_sluzba.controller.dto.GradDTO;
+import rs.fon.studentska_sluzba.controller.mapper.GradMapper;
 import rs.fon.studentska_sluzba.service.GradService;
 
 import java.util.List;
@@ -17,28 +16,35 @@ public class GradController {
 
     private final GradService gradService;
 
+    private final GradMapper gradMapper;
+
+
     @Autowired
-    public GradController(GradService gradService) {
+    public GradController(GradService gradService, GradMapper gradMapper) {
         this.gradService = gradService;
+        this.gradMapper = gradMapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<Grad>> getAll() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication);
-        return ResponseEntity.ok(gradService.findAll());
+    public ResponseEntity<List<GradDTO>> getAll() {
+        return ResponseEntity.ok(gradMapper.entitiesToDTOs(gradService.findAll()));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<GradDTO> getGradSaId(@PathVariable Long id) {
+        return ResponseEntity.ok(gradMapper.entityToDTO(gradService.getGradSaId(id)));
     }
 
     @PostMapping
-    public ResponseEntity<Grad> post(@RequestBody Grad grad) {
-        return new ResponseEntity<>(gradService.ubaciGrad(grad), HttpStatus.CREATED);
+    public ResponseEntity<GradDTO> ubaciGrad(@RequestBody GradDTO gradDTO) {
+        return new ResponseEntity<>(gradMapper.entityToDTO(gradService.ubaciGrad(gradMapper.DTOToEntity(gradDTO))), HttpStatus.CREATED);
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> deleteGrad(@RequestParam Long id) {
-        if (gradService.deleteGrad(id))
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        return new ResponseEntity(HttpStatus.NOT_FOUND);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> obrisiGradSaId(@PathVariable Long id) {
+        if (gradService.obrisiGradSaId(id))
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 }

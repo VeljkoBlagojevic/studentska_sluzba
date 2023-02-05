@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -54,13 +55,21 @@ public class Student implements UserDetails {
     @ManyToOne
     private Grad mestoRodjenja;
 
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name = "trenutno_slusa",
+//            joinColumns = @JoinColumn(name = "student_id"),
+//            inverseJoinColumns = @JoinColumn(name = "predmet_id")
+//    )
+//    private List<Predmet> trenutnoSlusa;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "trenutno_slusa",
+            name = "prijava",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "predmet_id")
     )
-    private List<Predmet> trenutnoSlusa;
+    private Set<Predmet> prijave;
 
     @NaturalId
     private String username;

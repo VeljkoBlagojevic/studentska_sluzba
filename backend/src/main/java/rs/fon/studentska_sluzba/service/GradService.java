@@ -1,5 +1,6 @@
 package rs.fon.studentska_sluzba.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Grad;
@@ -25,11 +26,15 @@ public class GradService {
         return gradRepository.save(grad);
     }
 
-    public boolean deleteGrad(Long id) {
+    public boolean obrisiGradSaId(Long id) {
         if(gradRepository.findById(id).isPresent()) {
             gradRepository.deleteById(id);
             return true;
         }
         return false;
+    }
+
+    public Grad getGradSaId(Long id) {
+        return gradRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 }

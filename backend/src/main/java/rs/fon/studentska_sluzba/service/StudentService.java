@@ -3,10 +3,11 @@ package rs.fon.studentska_sluzba.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import rs.fon.studentska_sluzba.domain.Obavestenje;
+import rs.fon.studentska_sluzba.domain.Predmet;
 import rs.fon.studentska_sluzba.domain.Student;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
 
-import java.security.Security;
 import java.util.List;
 
 @Service
@@ -25,4 +26,14 @@ public class StudentService {
     public Student getTrenutniStudent() {
         return (Student) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
+
+    public void dodajPrijavu(Predmet prijava) {
+        Student trenutniStudent = getTrenutniStudent();
+        if(trenutniStudent.getPrijave().contains(prijava)) {
+            return;
+        }
+        trenutniStudent.getPrijave().add(prijava);
+        studentRepository.save(trenutniStudent);
+    }
+
 }
