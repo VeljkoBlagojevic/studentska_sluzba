@@ -14,6 +14,7 @@ public class StudentMapper implements Mapper<Student, StudentDTO> {
                 student.getIme(),
                 student.getPrezime(),
                 student.getJmbg(),
+                student.getIndeks(),
                 student.getDatumRodjenja(),
                 student.getBrojTelefona(),
                 student.getStudentskiEmail(),
@@ -32,6 +33,7 @@ public class StudentMapper implements Mapper<Student, StudentDTO> {
                 .ime(studentDTO.ime())
                 .prezime(studentDTO.prezime())
                 .jmbg(studentDTO.jmbg())
+                .indeks(studentDTO.indeks())
                 .datumRodjenja(studentDTO.datumRodjenja())
                 .brojTelefona(studentDTO.brojTelefona())
                 .studentskiEmail(studentDTO.studentskiEmail())
