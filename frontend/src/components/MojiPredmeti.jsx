@@ -1,7 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-function MojiPredmeti() {
+class MojiPredmeti extends React.Component {
+
+    state = {
+      data: []
+    }
+    
+    componentDidMount() {
+      axios({
+          method: 'get',
+          url: '/api/v1/predmeti/slusa1',
+          baseURL: 'http://localhost:8080',
+          data: {},
+          headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
+        }).then((response) => {
+          console.log(response);
+          this.setState({data: response.data})
+          console.log(this.state.data);
+        }, (error) => {
+          console.log(error);
+        });
+    }
+      
+    render(){
   return (
     <div className='MojiPredmeti'>
         <h1>Moji predmeti</h1>
@@ -14,20 +37,11 @@ function MojiPredmeti() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Programiranje 1</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Programiranje 2</td>
-                    <td>6</td>
-                </tr>
+                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.espb}</td><td></td></tr>)}
             </tbody>
         </table>
     </div>
   );
-}
+}}
 
 export default MojiPredmeti

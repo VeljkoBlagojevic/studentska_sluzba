@@ -25,17 +25,17 @@ function Sidebar() {
         <a href="/biranjePredmeta" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>Biranje predmeta</span>
         </a>
-        <a href="/ispiti" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-lock fa-fw me-3"></i><span>Ispiti</span></a
+        <a href="/ispitiUspesno" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-lock fa-fw me-3"></i><span>Uspesna polaganja</span></a
+        >
+        <a href="/ispitiNeuspesno" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-lock fa-fw me-3"></i><span>Neuspesna polaganja</span></a
         >
         <a href="/molba" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Molba</span></a
         >
         <a href="/mojiPredmeti" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-pie fa-fw me-3"></i><span>Moji predmeti</span></a
-        >
-        <a href="/upis" class="list-group-item list-group-item-action py-2 ripple">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Upisi</span></a
         >
         <a href="/student" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-pie fa-fw me-3"></i><span>Podaci o studentu</span></a

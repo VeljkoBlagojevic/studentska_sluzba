@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class BiranjePredmeta extends React.Component {
-
+class IspitiNeuspesno extends React.Component {
     state = {
       data: []
     }
@@ -11,7 +10,7 @@ class BiranjePredmeta extends React.Component {
     componentDidMount() {
       axios({
           method: 'get',
-          url: '/api/v1/predmeti/nepolozeni',
+          url: '/api/v1/polaganja/neuspesna',
           baseURL: 'http://localhost:8080',
           data: {},
           headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
@@ -26,24 +25,24 @@ class BiranjePredmeta extends React.Component {
       
     render(){
   return (
-    <div className='BiranjePredmeta'>
-        <h1>Biranje predmeta</h1>
+    <div className='Ispiti'>
+        <h1>Ispiti</h1>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Predmet</th>
                     <th scope="col">ESPB</th>
-                    <th scope="col">Dodaj</th>
+                    <th scope="col">Ocena</th>
+                    <th scope="col">Datum</th>
                 </tr>
             </thead>
             <tbody>
-                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.espb}</td><td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input></td></tr>)}
+                    {this.state.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.espb}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
             </tbody>
         </table>
-        <button type="button" class="btn btn-danger">Potvrdi</button>
     </div>
   );
 }}
 
-export default BiranjePredmeta
+export default IspitiNeuspesno
