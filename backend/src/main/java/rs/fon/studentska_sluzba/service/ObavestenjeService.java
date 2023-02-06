@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Obavestenje;
 import rs.fon.studentska_sluzba.repository.ObavestenjeRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -25,6 +26,7 @@ public class ObavestenjeService {
     }
 
     public Obavestenje ubaciObavestenje(Obavestenje obavestenje) {
+        obavestenje.setDatum(LocalDate.now());
         return obavestenjeRepository.save(obavestenje);
     }
 

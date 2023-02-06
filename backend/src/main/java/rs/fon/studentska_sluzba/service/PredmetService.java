@@ -66,6 +66,7 @@ public class PredmetService {
 
 
     public NepolozeniPredmet dodajZaSlusanje(NepolozeniPredmet nepolozeniPredmet) {
+        nepolozeniPredmet.setStudent(studentService.getTrenutniStudent());
         return nepolozeniPredmetRepository.save(nepolozeniPredmet);
     }
 }
