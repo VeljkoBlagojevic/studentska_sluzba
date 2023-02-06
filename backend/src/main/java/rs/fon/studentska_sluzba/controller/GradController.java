@@ -10,6 +10,7 @@ import rs.fon.studentska_sluzba.service.GradService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/gradovi")
 public class GradController {

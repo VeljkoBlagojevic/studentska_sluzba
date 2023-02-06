@@ -9,6 +9,7 @@ import rs.fon.studentska_sluzba.service.PolaganjeService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/polaganja")
 public class PolaganjeController {

@@ -10,6 +10,7 @@ import rs.fon.studentska_sluzba.service.PredmetService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/predmeti")
 public class PredmetController {

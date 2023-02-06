@@ -8,7 +8,7 @@ import rs.fon.studentska_sluzba.controller.mapper.ObavestenjeMapper;
 import rs.fon.studentska_sluzba.service.ObavestenjeService;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/obavestenja")
 public class ObavestenjeController {

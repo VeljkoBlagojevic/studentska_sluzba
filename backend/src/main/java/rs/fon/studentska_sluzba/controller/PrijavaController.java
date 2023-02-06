@@ -10,6 +10,7 @@ import rs.fon.studentska_sluzba.service.PrijavaService;
 import java.util.HashSet;
 import java.util.Set;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/prijave")
 public class PrijavaController {

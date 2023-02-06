@@ -9,6 +9,7 @@ import rs.fon.studentska_sluzba.service.MolbaService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/molbe")
 public class MolbaController {
