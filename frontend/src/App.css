@@ -49,10 +49,17 @@ nav{
   height: 90px;
 }
 
+.Student{
+  display: inline-flex;
+  width: 65vw;
+  justify-content: center;
+  padding-left: 50px;
+}
+
 table{
   padding-left: 0px;
   border: 1px solid;
-
+  width: 900px;
 }
 
 tr{
@@ -82,7 +89,7 @@ tr:hover {
 }
 
 .statusMolbe{
-  width: 150px;
+  width: 200px;
   border: 0px;
   background-color: #eeeaea;
   transition: 0.8s;
@@ -114,8 +121,14 @@ button{
   border-radius: 25px;
   background: rgba(178, 41, 41, 0.853);
   padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
   width: 100%;
   height: 150px;
+}
+
+.poruka{
+  color: red;
 }
 
 

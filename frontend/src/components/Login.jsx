@@ -6,6 +6,7 @@ import axios from 'axios';
 function Login() {
   const [username, setUsername] = useState('');
   const [passwrod, setPassword] = useState('');
+  const [poruka, setPoruka] = useState('');
   
   const handleChangeUsername = (event) => {
     setUsername(event.target.value);
@@ -14,6 +15,8 @@ function Login() {
   const handleChangePassword = (event) => {
     setPassword(event.target.value);
   };
+
+  localStorage.clear();
   return (
     <div className='Login'>
       <h1>Login</h1>
@@ -28,6 +31,8 @@ function Login() {
             <label class="form-label" for="form2Example2">Lozinka</label>
           </div>
 
+         
+
 
           <button type="button" class="btn btn-outline-danger" onClick={() => {
             axios({
@@ -41,12 +46,18 @@ function Login() {
             }).then((response) => {
               console.log(response);
               localStorage.setItem('token', response.data.token);
+              window.location.href = "/Obavestenja";
             }, (error) => {
               console.log(error);
+              setPoruka("Neispravno korisnicko ime ili sifra!");
             });
           }}>Prijavi se</button>
 
         </form>
+        <br></br>
+         <div class="poruka">
+            <h4><b>{poruka}</b></h4>
+          </div>
     </div>
   );
 }
