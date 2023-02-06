@@ -33,8 +33,8 @@ public class PredmetController {
         return ResponseEntity.ok(predmetMapper.entitiesToDTOs(predmetService.getTrenutnoSlusani()));
     }
     @PostMapping("/slusa")
-    public ResponseEntity<List<PredmetDTO>> izaberiPredmeteZaSlusanje(@RequestBody List<PredmetDTO> predmetiZaSlusanjeDTOs) {
-        return ResponseEntity.ok(predmetMapper.entitiesToDTOs(predmetService.izaberiPredmeteZaSlusanje(predmetMapper.DTOsToEntities(predmetiZaSlusanjeDTOs))));
+    public ResponseEntity<NepolozeniPredmet> izaberiPredmeteZaSlusanje(@RequestBody NepolozeniPredmet nepolozeniPredmet) {
+        return ResponseEntity.ok(predmetService.dodajZaSlusanje(nepolozeniPredmet));
     }
 
 }

@@ -65,4 +65,7 @@ public class PredmetService {
     }
 
 
+    public NepolozeniPredmet dodajZaSlusanje(NepolozeniPredmet nepolozeniPredmet) {
+        return nepolozeniPredmetRepository.save(nepolozeniPredmet);
+    }
 }
