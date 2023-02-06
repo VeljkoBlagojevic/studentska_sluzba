@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function Molba() {
+function MolbeIzdate() {
     const [data, setData] = useState([]);
     useEffect(() => {
         axios({
             method: 'get',
-            url: '/api/v1/molbe/uobradi',
+            url: '/api/v1/molbe/razresene',
             baseURL: 'http://localhost:8080',
             data: {},
             headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
@@ -25,8 +25,8 @@ function Molba() {
         <h1>Molbe</h1>
         <div class="status">
             <form>
-            <button class="statusMolbe" formaction="/unesiMolbu">U obradi</button>
-            <button class="statusMolbe" formaction="/unesiMolbu">Izdate</button>
+            <button class="statusMolbe" formaction="/molbeUObradi">U obradi</button>
+            <button class="statusMolbe" formaction="/molbeIzdate">Izdate</button>
             <button class="statusMolbe" formaction="/unesiMolbu">Podnesi molbu</button>
         </form>
         </div>
@@ -46,4 +46,4 @@ function Molba() {
   );
 }
 
-export default Molba
+export default MolbeIzdate

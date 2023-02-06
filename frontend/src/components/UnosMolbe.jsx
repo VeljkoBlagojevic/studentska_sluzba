@@ -1,24 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function UnosMolbe() {
+  function podnesiMolbu(){
+    axios({
+      method: 'post',
+      url: '/api/v1/molbe/uobradi',
+      baseURL: 'http://localhost:8080',
+      data: {
+          //sadrzaj: document.getElementById("text").value
+          pitanje: document.getElementById("text").value
+      },
+      headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
+    }).then((response) => {
+    }, (error) => {
+      console.log(error);
+    });
+  }
   return (
     <div className='UnosMolbe'>
       <h1>Unos molbe</h1>
         <h5>Tip molbe:</h5>
-        <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            izaberi tip
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Dodatni ESPB</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
-        </div>
-        </div>
+        <select name="language" id="language">
+          <option value="javascript">Promena podataka o studentu</option>
+        </select>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Obrazlozenje</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="text" rows="3"></textarea>
+            <br></br>
+            <button type="button" class="btn btn-danger" onClick={podnesiMolbu}>Potvrdi</button>
         </div>
     </div>
   );

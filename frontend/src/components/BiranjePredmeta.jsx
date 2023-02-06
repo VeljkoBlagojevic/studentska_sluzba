@@ -7,8 +7,17 @@ class BiranjePredmeta extends React.Component {
     state = {
       data: []
     }
+
+    builder(){
+      this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+    };
+    
+    forceUpdateHandler(){
+      this.forceUpdate();
+    };
     
     componentDidMount() {
+
       axios({
           method: 'get',
           url: '/api/v1/predmeti/nepolozeni',
@@ -22,6 +31,36 @@ class BiranjePredmeta extends React.Component {
         }, (error) => {
           console.log(error);
         });
+
+
+    }
+
+    izaberiPredmete(){
+      for(let i=0;i<this.state.data.length;i++){
+          axios({
+            method: 'post',
+            url: '/api/v1/predmeti/slusa',
+            baseURL: 'http://localhost:8080',
+            data: {
+              id: this.state.data[i].id,
+              predmet: this.state.data[i].predmet,
+              trenutnoSlusa: this.state.data[i].trenutnoSlusa
+            },
+            headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
+          }).then((response) => {
+            console.log(response);
+          }, (error) => {
+            console.log(error);
+          });
+      }
+      
+    }
+
+    promeni(id){
+      this.state.data.filter(el => el.id===id).forEach(el => el.trenutnoSlusa=!el.trenutnoSlusa);
+      //this.state.data[id].trenutnoSlusa=!this.state.data[id].trenutnoSlusa;
+      console.log(this.state.data);
+      this.forceUpdateHandler();
     }
       
     render(){
@@ -38,10 +77,10 @@ class BiranjePredmeta extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.espb}</td><td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input></td></tr>)}
+                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet.naziv}</td><td>{el.predmet.espb}</td><td><input class="form-check-input" type="checkbox" id={index} checked={el.trenutnoSlusa} onChange={() => this.promeni(el.id)}></input></td></tr>)}
             </tbody>
         </table>
-        <button type="button" class="btn btn-danger">Potvrdi</button>
+        <button type="button" class="btn btn-danger" onClick={() => this.izaberiPredmete()}>Potvrdi</button>
     </div>
   );
 }}

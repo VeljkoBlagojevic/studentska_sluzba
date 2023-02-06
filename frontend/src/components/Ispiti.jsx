@@ -94,7 +94,7 @@ class Ispiti extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                    {(this.state.tip ? this.state.dataUspesno : this.state.dataNeuspesno).map(el => <tr><td>x</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.espb}</td><td>{el.ocena}</td><td></td></tr>)}
+                    {(this.state.tip ? this.state.dataUspesno : this.state.dataNeuspesno).map(el => <tr><td>x</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.ESPB}</td><td>{el.ocena}</td><td></td></tr>)}
                 <tr>
                     <h5>Prosecna ocena:</h5> 
                 </tr>
