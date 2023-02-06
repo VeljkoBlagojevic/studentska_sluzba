@@ -3,7 +3,8 @@ package rs.fon.studentska_sluzba.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.studentska_sluzba.domain.Polaganje;
+import rs.fon.studentska_sluzba.controller.dto.PolaganjeDTO;
+import rs.fon.studentska_sluzba.controller.mapper.PolaganjeMapper;
 import rs.fon.studentska_sluzba.service.PolaganjeService;
 
 import java.util.List;
@@ -14,23 +15,26 @@ public class PolaganjeController {
 
     private final PolaganjeService polaganjeService;
 
-    public PolaganjeController(PolaganjeService polaganjeService) {
+    private final PolaganjeMapper polaganjeMapper;
+
+    public PolaganjeController(PolaganjeService polaganjeService, PolaganjeMapper polaganjeMapper) {
         this.polaganjeService = polaganjeService;
+        this.polaganjeMapper = polaganjeMapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<Polaganje>> getSvaPolaganja() {
-        return ResponseEntity.ok(polaganjeService.getSvaPolaganja());
+    public ResponseEntity<List<PolaganjeDTO>> getSvaPolaganja() {
+        return ResponseEntity.ok(polaganjeMapper.entitiesToDTOs(polaganjeService.getSvaPolaganja()));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Polaganje> getPolaganje(@PathVariable Long id) {
-        return ResponseEntity.ok(polaganjeService.getPolaganjeSaId(id));
+    public ResponseEntity<PolaganjeDTO> getPolaganje(@PathVariable Long id) {
+        return ResponseEntity.ok(polaganjeMapper.entityToDTO(polaganjeService.getPolaganjeSaId(id)));
     }
 
     @PostMapping
-    public ResponseEntity<Polaganje> dodajPolaganje(@RequestBody Polaganje polaganje) {
-        return new ResponseEntity<>(polaganjeService.ubaciPolaganje(polaganje), HttpStatus.CREATED);
+    public ResponseEntity<PolaganjeDTO> dodajPolaganje(@RequestBody PolaganjeDTO polaganjeDTO) {
+        return new ResponseEntity<>(polaganjeMapper.entityToDTO(polaganjeService.ubaciPolaganje(polaganjeMapper.DTOToEntity(polaganjeDTO))), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
@@ -41,12 +45,12 @@ public class PolaganjeController {
     }
 
     @GetMapping("/uspesna")
-    public ResponseEntity<List<Polaganje>> getSvaUspesnaPolaganja() {
-        return ResponseEntity.ok(polaganjeService.getSvaUspesnaPolaganja());
+    public ResponseEntity<List<PolaganjeDTO>> getSvaUspesnaPolaganja() {
+        return ResponseEntity.ok(polaganjeMapper.entitiesToDTOs(polaganjeService.getSvaUspesnaPolaganja()));
     }
 
     @GetMapping("/neuspesna")
-    public ResponseEntity<List<Polaganje>> getSvaNeuspesnaPolaganja() {
-        return ResponseEntity.ok(polaganjeService.getSvaNeuspesnaPolaganja());
+    public ResponseEntity<List<PolaganjeDTO>> getSvaNeuspesnaPolaganja() {
+        return ResponseEntity.ok(polaganjeMapper.entitiesToDTOs(polaganjeService.getSvaNeuspesnaPolaganja()));
     }
 }

@@ -22,19 +22,21 @@ public class GradService {
         return gradRepository.findAll();
     }
 
+    public Grad getGradSaId(Long id) {
+        return gradRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+    }
+
     public Grad ubaciGrad(Grad grad) {
         return gradRepository.save(grad);
     }
 
     public boolean obrisiGradSaId(Long id) {
-        if(gradRepository.findById(id).isPresent()) {
+        if (gradRepository.findById(id).isPresent()) {
             gradRepository.deleteById(id);
             return true;
         }
         return false;
     }
 
-    public Grad getGradSaId(Long id) {
-        return gradRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-    }
+
 }

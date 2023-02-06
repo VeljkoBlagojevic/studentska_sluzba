@@ -26,9 +26,4 @@ public class Grad {
     @Min(value = 10_000, message = "Zipcode mora imati tacno 5 cifara")
     @Max(value = 99_999, message = "Zipcode mora imati tacno 5 cifara")
     private Integer zipcode;
-
-    public Grad(String naziv, Integer zipcode) {
-        this.naziv = naziv;
-        this.zipcode = zipcode;
-    }
 }

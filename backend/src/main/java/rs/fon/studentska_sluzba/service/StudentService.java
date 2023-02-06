@@ -27,13 +27,6 @@ public class StudentService {
         return (Student) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
-    public void dodajPrijavu(Predmet prijava) {
-        Student trenutniStudent = getTrenutniStudent();
-        if(trenutniStudent.getPrijave().contains(prijava)) {
-            return;
-        }
-        trenutniStudent.getPrijave().add(prijava);
-        studentRepository.save(trenutniStudent);
-    }
+
 
 }
