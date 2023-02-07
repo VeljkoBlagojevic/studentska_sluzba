@@ -9,13 +9,14 @@ import rs.fon.studentska_sluzba.repository.MolbaRepository;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MolbaService {
 
-    private MolbaRepository molbaRepository;
+    private final MolbaRepository molbaRepository;
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
     public MolbaService(MolbaRepository molbaRepository, StudentService studentService) {
         this.molbaRepository = molbaRepository;
@@ -23,12 +24,17 @@ public class MolbaService {
     }
 
     public List<Molba> findAll() {
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return molbaRepository.findAll();
         Student trenutniStudent = studentService.getTrenutniStudent();
         return molbaRepository.findByStudent(trenutniStudent);
     }
 
     public Molba getMolbaSaId(Long id) {
-        return molbaRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return molbaRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        Student trenutniStudent = studentService.getTrenutniStudent();
+        return molbaRepository.findByStudentAndId(trenutniStudent, id).orElseThrow(EntityNotFoundException::new);
     }
 
     public Molba dodajMolbuUObradi(Molba molba) {
@@ -51,6 +57,13 @@ public class MolbaService {
     }
 
     public List<Molba> findAllUObradi() {
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return molbaRepository
+                    .findAll()
+                    .stream()
+                    .filter(molba -> molba.getStatusMolbe().equals(StatusMolbe.U_OBRADI))
+                    .toList();
+
         Student trenutniStudent = studentService.getTrenutniStudent();
         return molbaRepository
                 .findByStudent(trenutniStudent)
@@ -60,11 +73,36 @@ public class MolbaService {
     }
 
     public List<Molba> findAllRazresene() {
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return molbaRepository
+                    .findAll()
+                    .stream()
+                    .filter(molba -> molba.getStatusMolbe().equals(StatusMolbe.RAZRESENA))
+                    .toList();
+
+
         Student trenutniStudent = studentService.getTrenutniStudent();
         return molbaRepository
                 .findByStudent(trenutniStudent)
                 .stream()
                 .filter(molba -> molba.getStatusMolbe().equals(StatusMolbe.RAZRESENA))
                 .toList();
+    }
+
+    public Molba razresiMolbu(Molba molba) {
+        molba.setDatumOdgovora(LocalDate.now());
+        molba.setStatusMolbe(StatusMolbe.RAZRESENA);
+        return molbaRepository.save(molba);
+    }
+
+    public Molba razresiMolbu(Long id, String odgovor) {
+        Optional<Molba> optionalMolba = molbaRepository.findById(id);
+        Molba molba = optionalMolba.orElseThrow(EntityNotFoundException::new);
+
+        molba.setOdgovor(odgovor);
+        molba.setDatumOdgovora(LocalDate.now());
+        molba.setStatusMolbe(StatusMolbe.RAZRESENA);
+
+        return molbaRepository.save(molba);
     }
 }

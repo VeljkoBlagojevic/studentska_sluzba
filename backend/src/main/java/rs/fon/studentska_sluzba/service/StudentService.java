@@ -1,10 +1,9 @@
 package rs.fon.studentska_sluzba.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import rs.fon.studentska_sluzba.domain.Obavestenje;
-import rs.fon.studentska_sluzba.domain.Predmet;
 import rs.fon.studentska_sluzba.domain.Student;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
 
@@ -25,6 +24,10 @@ public class StudentService {
 
     public Student getTrenutniStudent() {
         return (Student) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    }
+
+    public Boolean jelTrenutniKorisnikAdmin() {
+        return SecurityContextHolder.getContext().getAuthentication().getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"));
     }
 
 

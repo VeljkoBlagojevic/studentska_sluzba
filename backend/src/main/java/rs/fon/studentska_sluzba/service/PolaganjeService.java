@@ -22,12 +22,19 @@ public class PolaganjeService {
 
 
     public List<Polaganje> getSvaPolaganja() {
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return polaganjeRepository.findAll();
+
         Student trenutniStudent = studentService.getTrenutniStudent();
         return polaganjeRepository.findByStudent(trenutniStudent);
     }
 
     public Polaganje getPolaganjeSaId(Long id) {
-        return polaganjeRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return polaganjeRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+
+        Student trenutniStudent = studentService.getTrenutniStudent();
+        return polaganjeRepository.findByStudentAndId(trenutniStudent, id).orElseThrow(EntityNotFoundException::new);
     }
 
     public Polaganje ubaciPolaganje(Polaganje polaganje) {
@@ -45,11 +52,18 @@ public class PolaganjeService {
     }
 
     public List<Polaganje> getSvaUspesnaPolaganja() {
-        Student trenutniStudent = studentService.getTrenutniStudent();
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return polaganjeRepository.findByPolozio(true);
+
+
+            Student trenutniStudent = studentService.getTrenutniStudent();
         return polaganjeRepository.findByStudentAndAndPolozio(trenutniStudent, true);
     }
 
     public List<Polaganje> getSvaNeuspesnaPolaganja() {
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return polaganjeRepository.findByPolozio(false);
+
         Student trenutniStudent = studentService.getTrenutniStudent();
         return polaganjeRepository.findByStudentAndAndPolozio(trenutniStudent, false);
     }

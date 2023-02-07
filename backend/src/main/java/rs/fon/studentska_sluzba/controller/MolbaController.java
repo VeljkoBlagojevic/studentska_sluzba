@@ -46,10 +46,15 @@ public class MolbaController {
     public ResponseEntity<MolbaDTO> dodajMolbuUObradi(@RequestBody MolbaDTO molbaDTO) {
         return new ResponseEntity<>(molbaMapper.entityToDTO(molbaService.dodajMolbuUObradi(molbaMapper.DTOToEntity(molbaDTO))), HttpStatus.CREATED);
     }
-//    @PostMapping("/razresene")
-//    public ResponseEntity<MolbaDTO> dodajMolbuRazresenu(@RequestBody MolbaDTO molbaDTO) {
-//        return new ResponseEntity<>(molbaService.dodajMolbuRazresenu(molbaDTO), HttpStatus.CREATED);
-//    }
+
+    @PatchMapping("/razresi")
+    public ResponseEntity<MolbaDTO> razresiMolbu(@RequestBody MolbaDTO molbaDTO) {
+        return new ResponseEntity<>(molbaMapper.entityToDTO(molbaService.razresiMolbu(molbaMapper.DTOToEntity(molbaDTO))), HttpStatus.CREATED);
+    }
+    @PatchMapping("/{id}/razresi")
+    public ResponseEntity<MolbaDTO> razresiMolbu(@PathVariable Long id, @RequestBody String odgovor) {
+        return new ResponseEntity<>(molbaMapper.entityToDTO(molbaService.razresiMolbu(id, odgovor)), HttpStatus.CREATED);
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> obrisiMolbuSaId(@PathVariable Long id) {

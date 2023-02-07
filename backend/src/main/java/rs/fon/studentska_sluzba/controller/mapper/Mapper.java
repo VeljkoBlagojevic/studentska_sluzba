@@ -1,7 +1,5 @@
 package rs.fon.studentska_sluzba.controller.mapper;
 
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 public interface Mapper<E, DTO> {

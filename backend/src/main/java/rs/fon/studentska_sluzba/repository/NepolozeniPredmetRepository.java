@@ -12,7 +12,10 @@ import java.util.List;
 public interface NepolozeniPredmetRepository extends JpaRepository<NepolozeniPredmet, Long> {
 
     List<NepolozeniPredmet> findByStudentAndTrenutnoSlusa(Student student, Boolean trenutnoSlusa);
+    List<NepolozeniPredmet> findByTrenutnoSlusa(Boolean trenutnoSlusa);
     List<NepolozeniPredmet> findByStudent(Student student);
+
+
 
     NepolozeniPredmet findByPredmetAndStudent(Predmet predmet, Student student);
 

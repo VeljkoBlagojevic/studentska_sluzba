@@ -39,7 +39,8 @@ public class PolaganjeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> obrisiPolaganjeSaId(@RequestParam Long id) {
+    public ResponseEntity<Void> obrisiPolaganjeSaId(@PathVariable Long id) {
+        System.out.println("pera");
         if (polaganjeService.obrisiPolaganjeSaId(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

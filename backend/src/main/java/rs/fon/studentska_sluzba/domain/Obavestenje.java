@@ -1,9 +1,6 @@
 package rs.fon.studentska_sluzba.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -27,6 +24,7 @@ public class Obavestenje {
     private LocalDate datum;
 
     @NotBlank(message = "Sadrzaj obavestenja ne sme biti prazno")
+    @Column(length=1000)
     private String sadrzaj;
 
 }
