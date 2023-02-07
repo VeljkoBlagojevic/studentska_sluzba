@@ -31,7 +31,7 @@ function Sidebar() {
         <a href="/ispitiNeuspesno" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-lock fa-fw me-3"></i><span>Neuspesna polaganja</span></a
         >
-        <a href="/molba" class="list-group-item list-group-item-action py-2 ripple"
+        <a href="/molbeUObradi" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Molba</span></a
         >
         <a href="/mojiPredmeti" class="list-group-item list-group-item-action py-2 ripple">

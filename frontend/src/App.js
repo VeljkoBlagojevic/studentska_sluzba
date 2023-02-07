@@ -5,15 +5,19 @@ import Sidebar from './components/Sidebar';
 import Login from './components/Login';
 import Ispiti from './components/Ispiti';
 import PrijavaIspita from './components/PrijavaIspita';
-import Molba from './components/Molba';
+import MolbeUObradi from './components/MolbeUObradi';
+import MolbeIzdate from './components/MolbeIzdate';
+import MolbeAdmin from './components/MolbeAdmin';
 import Student from './components/Student2';
 import UnosMolbe from './components/UnosMolbe';
 import BiranjePredmeta from './components/BiranjePredmeta';
 import MojiPredmeti from './components/MojiPredmeti';
 import Obavestenja from './components/Obavestenja';
+import ObavestenjaAdmin from './components/ObavestenjaAdmin';
 import { useState } from 'react';
 import IspitiUspesno from './components/IspitiUspesno';
 import IspitiNeuspesno from './components/IspitiNeuspesno';
+import UnosObavestenja from './components/UnosObavestenja';
 
 const urlBase = "localhost:8080";
 
@@ -33,12 +37,15 @@ function App() {
               <Route path='/ispitiUspesno' element={<IspitiUspesno/>} />
               <Route path='/ispitiNeuspesno' element={<IspitiNeuspesno/>} />
               <Route path='/prijavaIspita' element={<PrijavaIspita/>} />
-              <Route path='/molba' element={<Molba/>} />
+              <Route path='/molbeUObradi' element={<MolbeAdmin/>} />
+              <Route path='/molbeIzdate' element={<MolbeIzdate/>} />
               <Route path='/student' element={<Student/>} />
               <Route path='/unesiMolbu' element={<UnosMolbe/>} />
               <Route path='/biranjePredmeta' element={<BiranjePredmeta/>} />
               <Route path='/mojiPredmeti' element={<MojiPredmeti/>} />
-              <Route path='/obavestenja' element={<Obavestenja/>} />
+              <Route path='/obavestenja' element={<ObavestenjaAdmin/>} />
+              <Route path='/obavestenjaAdmin' element={<ObavestenjaAdmin/>} />
+              <Route path='/unosObavestenja' element={<UnosObavestenja/>} />
             </Routes>
           </div>
         </div>

@@ -11,7 +11,7 @@ class MojiPredmeti extends React.Component {
     componentDidMount() {
       axios({
           method: 'get',
-          url: '/api/v1/predmeti/slusa1',
+          url: '/api/v1/predmeti/slusa',
           baseURL: 'http://localhost:8080',
           data: {},
           headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
@@ -37,7 +37,7 @@ class MojiPredmeti extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.espb}</td><td></td></tr>)}
+                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.ESPB}</td><td></td></tr>)}
             </tbody>
         </table>
     </div>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function Molba() {
+function MolbeUObradi() {
     const [data, setData] = useState([]);
     useEffect(() => {
         axios({
@@ -25,9 +25,7 @@ function Molba() {
         <h1>Molbe</h1>
         <div class="status">
             <form>
-            <button class="statusMolbe" formaction="/unesiMolbu">U obradi</button>
-            <button class="statusMolbe" formaction="/unesiMolbu">Izdate</button>
-            <button class="statusMolbe" formaction="/unesiMolbu">Podnesi molbu</button>
+                <button class="statusMolbe" formaction="/unesiMolbu">Obradi molbu</button>
         </form>
         </div>
         <table class="table">
@@ -46,4 +44,4 @@ function Molba() {
   );
 }
 
-export default Molba
+export default MolbeUObradi
