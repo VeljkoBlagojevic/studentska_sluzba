@@ -38,7 +38,7 @@ class BiranjePredmeta extends React.Component {
     izaberiPredmete(){
       for(let i=0;i<this.state.data.length;i++){
           axios({
-            method: 'post',
+            method: 'patch',
             url: '/api/v1/predmeti/slusa',
             baseURL: 'http://localhost:8080',
             data: {
