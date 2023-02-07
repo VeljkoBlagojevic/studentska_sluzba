@@ -16,7 +16,7 @@ class IspitiNeuspesno extends React.Component {
           headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
         }).then((response) => {
           console.log(response);
-          this.setState({data: response.data})
+          this.setState({data: response.data});
           console.log(this.state.data);
         }, (error) => {
           console.log(error);
@@ -38,7 +38,7 @@ class IspitiNeuspesno extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                    {this.state.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.espb}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
+                    {this.state.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.ESPB}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
             </tbody>
         </table>
     </div>

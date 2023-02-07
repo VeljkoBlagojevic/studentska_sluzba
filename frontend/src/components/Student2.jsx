@@ -40,23 +40,35 @@ class Student extends React.Component {
                     </tr>
                     <tr>
                         <th>Ime i prezime</th>
-                        <td>{this.state.data?.ime}</td>
+                        <td>{this.state.data?.ime + " " + this.state.data?.prezime}</td>
                     </tr>
                     <tr>
-                        <th>Pol</th>
-                        <td>Muski</td>
+                        <th>Username</th>
+                        <td>{this.state.data?.username}</td>
+                    </tr>
+                    <tr>
+                        <th>Ime roditelja</th>
+                        <td>{this.state.data?.imeRoditelja}</td>
+                    </tr>
+                    <tr>
+                        <th>JMBG</th>
+                        <td>{this.state.data?.jmbg}</td>
                     </tr>
                     <tr>
                         <th>Mesto rodjenja</th>
                         <td>{this.state.data?.mestoRodjenja}</td>
                     </tr>
                     <tr>
-                        <th>Email</th>
+                        <th>Licni email</th>
                         <td>{this.state.data?.licniEmail}</td>
                     </tr>
                     <tr>
-                        <th>Stanje na racunu</th>
-                        <td>150</td>
+                        <th>Studentski email</th>
+                        <td>{this.state.data?.studentskiEmail}</td>
+                    </tr>
+                    <tr>
+                        <th>Broj telefona</th>
+                        <td>{this.state.data?.brojTelefona}</td>
                     </tr>
                     
                 </tbody>

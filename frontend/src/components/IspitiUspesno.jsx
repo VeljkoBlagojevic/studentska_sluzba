@@ -5,7 +5,8 @@ import axios from 'axios';
 class IspitiUspesno extends React.Component {
     state = {
       data: [],
-      prosek: 0
+      prosek: 0,
+      ukupnoESPB: 0
     }
     
     componentDidMount() {
@@ -17,9 +18,10 @@ class IspitiUspesno extends React.Component {
           headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
         }).then((response) => {
           console.log(response);
-          this.setState({data: response.data})
+          this.setState({data: response.data});
           console.log(this.state.data);
           this.setState({prosek: (this.state.data.map(el => el.ocena).reduce((partialSum, a) => partialSum + a, 0))/this.state.data.length });
+          this.setState({ukupnoESPB: (this.state.data.map(el => el.predmet.ESPB).reduce((partialSum, a) => partialSum + a, 0)) });
         }, (error) => {
           console.log(error);
         });
@@ -40,9 +42,10 @@ class IspitiUspesno extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                    {this.state.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.espb}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
+                    {this.state.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.ESPB}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
                 <tr>
                     <h5>Prosecna ocena: {this.state.prosek}</h5> 
+                    <h5>Ukupno osvojeno ESPB: {this.state.ukupnoESPB}</h5> 
                 </tr>
             </tbody>
         </table>
