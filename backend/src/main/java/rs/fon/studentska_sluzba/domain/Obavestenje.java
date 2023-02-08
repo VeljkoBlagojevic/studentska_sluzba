@@ -2,6 +2,7 @@ package rs.fon.studentska_sluzba.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -24,7 +25,8 @@ public class Obavestenje {
     private LocalDate datum;
 
     @NotBlank(message = "Sadrzaj obavestenja ne sme biti prazno")
-    @Column(length=1000)
+    @Size(max = 1000, message = "Sadrzaj obavestenja ne sme prelaziti 1000 karaktera")
+    @Column(length = 1000)
     private String sadrzaj;
 
 }

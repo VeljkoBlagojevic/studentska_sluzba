@@ -12,4 +12,5 @@ import lombok.*;
 public class AuthenticationResponse {
 
   private String token;
+  private Boolean isAdmin;
 }

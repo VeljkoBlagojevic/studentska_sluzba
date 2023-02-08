@@ -15,10 +15,4 @@ public interface NepolozeniPredmetRepository extends JpaRepository<NepolozeniPre
     List<NepolozeniPredmet> findByTrenutnoSlusa(Boolean trenutnoSlusa);
     List<NepolozeniPredmet> findByStudent(Student student);
 
-
-
-    NepolozeniPredmet findByPredmetAndStudent(Predmet predmet, Student student);
-
-    NepolozeniPredmet findByPredmetAndIdAndStudent(Predmet predmet, Long id, Student student);
-
 }
