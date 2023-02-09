@@ -1,0 +1,9 @@
+{
+  "name": "studentska-sluzba",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {},
+  "dependencies": {
+    "recharts": "^2.3.2"
+  }
+}

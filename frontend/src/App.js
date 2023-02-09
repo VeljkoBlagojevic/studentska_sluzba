@@ -18,6 +18,8 @@ import { useState } from 'react';
 import IspitiUspesno from './components/IspitiUspesno';
 import IspitiNeuspesno from './components/IspitiNeuspesno';
 import UnosObavestenja from './components/UnosObavestenja';
+import ONama from './components/ONama';
+import Analitika from './components/Analitika';
 
 const urlBase = "localhost:8080";
 
@@ -45,7 +47,9 @@ function App() {
               <Route path='/mojiPredmeti' element={<MojiPredmeti/>} />
               <Route path='/obavestenja' element={<ObavestenjaAdmin/>} />
               <Route path='/obavestenjaAdmin' element={<ObavestenjaAdmin/>} />
+              <Route path='/oNama' element = {<ONama/>}/>
               <Route path='/unosObavestenja' element={<UnosObavestenja/>} />
+              <Route path='/analitika' element={<Analitika/>}></Route>
             </Routes>
           </div>
         </div>

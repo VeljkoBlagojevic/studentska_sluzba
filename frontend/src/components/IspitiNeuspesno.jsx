@@ -22,7 +22,7 @@ class IspitiNeuspesno extends React.Component {
           console.log(error);
         });
     }
-      
+    
     render(){
   return (
     <div className='Ispiti'>
@@ -43,6 +43,7 @@ class IspitiNeuspesno extends React.Component {
         </table>
     </div>
   );
-}}
+}
+}
 
 export default IspitiNeuspesno
