@@ -1,6 +1,9 @@
 package rs.fon.studentska_sluzba.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.NepolozeniPredmet;
 import rs.fon.studentska_sluzba.domain.Predmet;
@@ -76,5 +79,19 @@ public class PredmetService {
     public NepolozeniPredmet dodajZaSlusanje(NepolozeniPredmet nepolozeniPredmet) {
         nepolozeniPredmet.setStudent(studentService.getTrenutniStudent());
         return nepolozeniPredmetRepository.save(nepolozeniPredmet);
+    }
+
+    public Page<Predmet> getTrenutnoSlusani(Integer pageNumber, Integer pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+
+        if(studentService.jelTrenutniKorisnikAdmin())
+            return nepolozeniPredmetRepository
+                    .findByTrenutnoSlusa(true, pageable)
+                    .map(NepolozeniPredmet::getPredmet);
+
+        Student trenutniStudent = studentService.getTrenutniStudent();
+        return nepolozeniPredmetRepository
+                .findByStudentAndTrenutnoSlusa(trenutniStudent, true, pageable)
+                .map(NepolozeniPredmet::getPredmet);
     }
 }

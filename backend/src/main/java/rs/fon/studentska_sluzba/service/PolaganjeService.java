@@ -1,6 +1,9 @@
 package rs.fon.studentska_sluzba.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Polaganje;
 import rs.fon.studentska_sluzba.domain.Student;
@@ -22,7 +25,7 @@ public class PolaganjeService {
 
 
     public List<Polaganje> getSvaPolaganja() {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin())
             return polaganjeRepository.findAll();
 
         Student trenutniStudent = studentService.getTrenutniStudent();
@@ -30,7 +33,7 @@ public class PolaganjeService {
     }
 
     public Polaganje getPolaganjeSaId(Long id) {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin())
             return polaganjeRepository.findById(id).orElseThrow(EntityNotFoundException::new);
 
         Student trenutniStudent = studentService.getTrenutniStudent();
@@ -52,19 +55,29 @@ public class PolaganjeService {
     }
 
     public List<Polaganje> getSvaUspesnaPolaganja() {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin())
             return polaganjeRepository.findByPolozio(true);
 
 
-            Student trenutniStudent = studentService.getTrenutniStudent();
+        Student trenutniStudent = studentService.getTrenutniStudent();
         return polaganjeRepository.findByStudentAndAndPolozio(trenutniStudent, true);
     }
 
     public List<Polaganje> getSvaNeuspesnaPolaganja() {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin())
             return polaganjeRepository.findByPolozio(false);
 
         Student trenutniStudent = studentService.getTrenutniStudent();
         return polaganjeRepository.findByStudentAndAndPolozio(trenutniStudent, false);
+    }
+
+    public Page<Polaganje> getSvaNeuspesnaPolaganja(Integer pageNumber, Integer pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+
+        if (studentService.jelTrenutniKorisnikAdmin())
+            return polaganjeRepository.findByPolozio(false, pageable);
+
+        Student trenutniStudent = studentService.getTrenutniStudent();
+        return polaganjeRepository.findByStudentAndAndPolozio(trenutniStudent, false, pageable);
     }
 }

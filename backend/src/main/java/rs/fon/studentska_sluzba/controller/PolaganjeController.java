@@ -1,5 +1,6 @@
 package rs.fon.studentska_sluzba.controller;
 
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,5 +55,12 @@ public class PolaganjeController {
     @GetMapping("/neuspesna")
     public ResponseEntity<List<PolaganjeDTO>> getSvaNeuspesnaPolaganja() {
         return ResponseEntity.ok(polaganjeMapper.entitiesToDTOs(polaganjeService.getSvaNeuspesnaPolaganja()));
+    }
+    @GetMapping("/neuspesna/pageable")
+    public ResponseEntity<Page<PolaganjeDTO>> getSvaNeuspesnaPolaganja(
+            @RequestParam (required = false, defaultValue = "0") Integer pageNumber,
+            @RequestParam (required = false, defaultValue = "3") Integer pageSize) {
+        Page<PolaganjeDTO> svaNeuspesnaPolaganjaDTOs = polaganjeService.getSvaNeuspesnaPolaganja(pageNumber, pageSize).map(polaganjeMapper::entityToDTO);
+        return ResponseEntity.ok(svaNeuspesnaPolaganjaDTOs);
     }
 }

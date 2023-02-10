@@ -1,6 +1,7 @@
 package rs.fon.studentska_sluzba.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.fon.studentska_sluzba.controller.dto.NepolozeniPredmetDTO;
@@ -37,6 +38,14 @@ public class PredmetController {
     @GetMapping("/slusa")
     public ResponseEntity<List<PredmetDTO>> getTrenutnoSlusanePredmete() {
         return ResponseEntity.ok(predmetMapper.entitiesToDTOs((predmetService.getTrenutnoSlusani())));
+    }
+
+    @GetMapping("/slusa/pageable")
+    public ResponseEntity<Page<PredmetDTO>> getTrenutnoSlusanePredmete(
+            @RequestParam (required = false, defaultValue = "0") Integer pageNumber,
+            @RequestParam (required = false, defaultValue = "3") Integer pageSize) {
+        Page<PredmetDTO> trenutnoSlusaniPredmetiDTOs = predmetService.getTrenutnoSlusani(pageNumber, pageSize).map(predmetMapper::entityToDTO);
+        return ResponseEntity.ok(trenutnoSlusaniPredmetiDTOs);
     }
 
     @PatchMapping("/slusa")
