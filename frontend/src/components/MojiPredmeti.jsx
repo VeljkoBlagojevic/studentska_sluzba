@@ -1,13 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Paginacija from './Paginacija';
 
 class MojiPredmeti extends React.Component {
-
+  constructor(){
+    super();
+    this.state = {
+      data: [],
+      trenutnaStrana:1,
+    }
+    this.setTrenutnaStranica = this.setTrenutnaStranica.bind(this)
+    }
     state = {
-      data: []
+      
     }
     
+    indeksPoslednjegPredmeta = 4;
+    indeksPrvogPredmeta = 1;
+    trenutniPredmeti = [];
+    
+    elementiPoStrani= 4;
+
+    setTrenutnaStranica(brojStranice = 1) {
+        console.log("HELLO WORLD")
+        console.log("BROJ STRANICE JE " + brojStranice)
+        this.state.trenutnaStrana = brojStranice;
+        console.log("TRENUTNA JE " + this.state.trenutnaStrana)
+        this.forceUpdate();
+    }
+
     componentDidMount() {
       axios({
           method: 'get',
@@ -18,13 +40,22 @@ class MojiPredmeti extends React.Component {
         }).then((response) => {
           console.log(response);
           this.setState({data: response.data})
-          console.log(this.state.data);
+          console.log("DATA SET " + this.state.data);
+          //this.setState({trenutnaStrana : 1})
+          //console.log("TRENUTNA STRANA SET" + this.state.trenutnaStrana)
+          
         }, (error) => {
           console.log(error);
         });
+        
     }
       
     render(){
+      
+      this.indeksPoslednjegPredmeta = this.state.trenutnaStrana * this.elementiPoStrani;
+      this.indeksPrvogPredmeta = this.indeksPoslednjegPredmeta - this.elementiPoStrani;
+      this.trenutniPredmeti = this.state.data.slice(this.indeksPrvogPredmeta, this.indeksPoslednjegPredmeta);
+     
   return (
     <div className='MojiPredmeti'>
         <h1>Moji predmeti</h1>
@@ -37,9 +68,13 @@ class MojiPredmeti extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.ESPB}</td><td></td></tr>)}
+                {this.trenutniPredmeti.map((el, index) => <tr><td>{index+1}</td><td>{el.naziv}</td><td>{el.ESPB}</td><td></td></tr>)}
             </tbody>
         </table>
+        <Paginacija ukupniPredmeti = {this.state.data.length} 
+        elementiPoStrani = {this.elementiPoStrani}
+        setTrenutnaStranica = {this.setTrenutnaStranica}/>
+
     </div>
   );
 }}

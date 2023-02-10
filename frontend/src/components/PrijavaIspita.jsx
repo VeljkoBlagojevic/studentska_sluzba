@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
-
-
 class PrijavaIspita extends React.Component {
 
   state = {

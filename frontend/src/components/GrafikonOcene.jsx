@@ -6,7 +6,8 @@ class GrafikonOcene extends React.Component {
     state = {
         data: {}
       }
-
+      pieData = [{},{},{},{},{}];
+      
     componentDidMount() {
         axios({
             method: 'get',
@@ -56,6 +57,7 @@ class GrafikonOcene extends React.Component {
                   }
                 ]
               }
+              
             });
           }, (error) => {
             console.log(error);
@@ -63,28 +65,8 @@ class GrafikonOcene extends React.Component {
       }
 
    COLORS = ["#8884d8", "#82ca9d", "#FFBB28", "#FF8042", "#AF19FF"];
-   pieData = [
-      {
-         name: "Apple",
-         value: 54.85
-      },
-      {
-         name: "Samsung",
-         value: 47.91
-      },
-      {
-         name: "Redmi",
-         value: 16.85
-      },
-      {
-         name: "One Plus",
-         value: 16.14
-      },
-      {
-         name: "Others",
-         value: 10.25
-      }
-   ];
+   
+   
    CustomTooltip = ({ active, payload, label }) => {
       if (active) {
          return (

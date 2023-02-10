@@ -1,12 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Paginacija from './Paginacija';
 
 class IspitiNeuspesno extends React.Component {
-    state = {
-      data: []
+    constructor(){
+    super();
+    this.state = {
+      data: [],
+      trenutnaStrana:1,
     }
+    this.setTrenutnaStranica = this.setTrenutnaStranica.bind(this)
+  }
+    state = {
+    }
+
+    indeksPoslednjegPredmeta = 4;
+    indeksPrvogPredmeta = 1;
+    trenutniPredmeti = [];
     
+    elementiPoStrani= 4;
+
+  setTrenutnaStranica(brojStranice) {
+        this.state.trenutnaStrana = brojStranice;
+        this.forceUpdate();
+    }
+
     componentDidMount() {
       axios({
           method: 'get',
@@ -24,6 +43,9 @@ class IspitiNeuspesno extends React.Component {
     }
     
     render(){
+      this.indeksPoslednjegPredmeta = this.state.trenutnaStrana * this.elementiPoStrani;
+      this.indeksPrvogPredmeta = this.indeksPoslednjegPredmeta - this.elementiPoStrani;
+      this.trenutniPredmeti = this.state.data.slice(this.indeksPrvogPredmeta, this.indeksPoslednjegPredmeta);
   return (
     <div className='Ispiti'>
         <h1>Ispiti</h1>
@@ -38,9 +60,12 @@ class IspitiNeuspesno extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                    {this.state.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.ESPB}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
+                    {this.trenutniPredmeti.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet?.naziv}</td><td>{el.predmet?.ESPB}</td><td>{el.ocena}</td><td>{el.datum}</td><td></td></tr>)}
             </tbody>
         </table>
+        <Paginacija ukupniPredmeti = {this.state.data.length} 
+        elementiPoStrani = {this.elementiPoStrani}
+        setTrenutnaStranica = {this.setTrenutnaStranica}/>
     </div>
   );
 }
