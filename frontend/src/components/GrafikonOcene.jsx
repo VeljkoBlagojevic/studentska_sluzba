@@ -96,7 +96,7 @@ class GrafikonOcene extends React.Component {
                border: "1px solid #cccc"
             }}
          >
-            <label>{`${payload[0].name} : ${payload[0].value}%`}</label>
+            <label>{`${payload[0].name} : ${payload[0].value}`}</label>
          </div>
       );
    }
