@@ -20,6 +20,7 @@ import IspitiNeuspesno from './components/IspitiNeuspesno';
 import UnosObavestenja from './components/UnosObavestenja';
 import ONama from './components/ONama';
 import Analitika from './components/Analitika';
+import Admin from './components/Admin';
 
 const urlBase = "localhost:8080";
 
@@ -50,6 +51,7 @@ function App() {
               <Route path='/oNama' element = {<ONama/>}/>
               <Route path='/unosObavestenja' element={<UnosObavestenja/>} />
               <Route path='/analitika' element={<Analitika/>}></Route>
+              <Route path='/admin' element={<Admin/>}></Route>
             </Routes>
           </div>
         </div>
