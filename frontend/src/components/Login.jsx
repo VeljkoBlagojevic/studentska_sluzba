@@ -46,7 +46,7 @@ function Login() {
             }).then((response) => {
               console.log(response);
               localStorage.setItem('token', response.data.token);
-              //localStorage.setItem('isAdmin', );
+              //localStorage.setItem('isAdmin', response.data.isAdmin);
               window.location.href = "/Obavestenja";
             }, (error) => {
               console.log(error);

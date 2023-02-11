@@ -7,7 +7,7 @@ function MolbeUObradi() {
     useEffect(() => {
         axios({
             method: 'get',
-            url: '/api/v1/molbe/uobradi',
+            url: '/api/v1/molbe',
             baseURL: 'http://localhost:8080',
             data: {},
             headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
@@ -19,14 +19,11 @@ function MolbeUObradi() {
             console.log(error);
           });
       }, []);
-
+//OMOGUCI DA SE UPISE ODGOVOR NA MOLBU I POTVRDI UNOS
   return (
     <div className='Molba'>
         <h1>Molbe</h1>
         <div class="status">
-            <form>
-                <button class="statusMolbe" formaction="/unesiMolbu">Obradi molbu</button>
-        </form>
         </div>
         <table class="table">
             <thead class="thead-dark">
@@ -34,10 +31,11 @@ function MolbeUObradi() {
                     <th scope="col">Tip molbe</th>
                     <th scope="col">Pitanje</th>
                     <th scope="col">Odgovor</th>
+                    <th scope="col">Obradi molbu</th>
                 </tr>
             </thead>
             <tbody>
-
+              
             </tbody>
         </table>
     </div>
