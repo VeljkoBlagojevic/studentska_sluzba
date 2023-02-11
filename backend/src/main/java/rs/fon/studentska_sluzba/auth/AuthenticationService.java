@@ -1,12 +1,11 @@
 package rs.fon.studentska_sluzba.auth;
 
-import rs.fon.studentska_sluzba.config.JwtService;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import rs.fon.studentska_sluzba.config.JwtService;
 import rs.fon.studentska_sluzba.domain.Role;
 import rs.fon.studentska_sluzba.domain.Student;
 import rs.fon.studentska_sluzba.repository.StudentRepository;

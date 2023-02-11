@@ -8,9 +8,23 @@ import rs.fon.studentska_sluzba.domain.TipMolbe;
 
 @Component
 public class MolbaMapper implements Mapper<Molba, MolbaDTO>  {
+
+    private StudentMapper studentMapper;
+
+    public MolbaMapper(StudentMapper studentMapper) {
+        this.studentMapper = studentMapper;
+    }
+
     @Override
     public MolbaDTO entityToDTO(Molba molba) {
-        return new MolbaDTO(molba.getId(), molba.getPitanje(), molba.getDatumPitanja(), molba.getOdgovor(), molba.getDatumOdgovora(), molba.getTipMolbe().name(), molba.getStatusMolbe() != null ? molba.getStatusMolbe().name() : null);
+        return new MolbaDTO(molba.getId(),
+                molba.getPitanje(),
+                molba.getDatumPitanja(),
+                molba.getOdgovor(),
+                molba.getDatumOdgovora(),
+                molba.getTipMolbe().name(),
+                molba.getStatusMolbe() != null ? molba.getStatusMolbe().name() : null,
+                molba.getStudent() != null ? studentMapper.entityToDTO(molba.getStudent()) : null);
     }
 
     @Override
@@ -23,6 +37,7 @@ public class MolbaMapper implements Mapper<Molba, MolbaDTO>  {
                 .datumOdgovora(molbaDTO.datumOdgovora())
                 .tipMolbe(TipMolbe.valueOf(molbaDTO.tipMolbe()))
                 .statusMolbe(molbaDTO.statusMolbe() != null ? StatusMolbe.valueOf(molbaDTO.statusMolbe()) : null)
+                .student(studentMapper.DTOToEntity(molbaDTO.student()))
                 .build();
     }
 }

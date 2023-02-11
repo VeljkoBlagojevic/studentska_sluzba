@@ -90,12 +90,20 @@ public class MolbaService {
     }
 
     public Molba razresiMolbu(Molba molba) {
+        if(!studentService.jelTrenutniKorisnikAdmin()) {
+            throw new RuntimeException("Niste ulogovani kao administrator da bi ste razresili molbu");
+        }
+
         molba.setDatumOdgovora(LocalDate.now());
         molba.setStatusMolbe(StatusMolbe.RAZRESENA);
         return molbaRepository.save(molba);
     }
 
     public Molba razresiMolbu(Long id, String odgovor) {
+        if(!studentService.jelTrenutniKorisnikAdmin()) {
+            throw new RuntimeException("Niste ulogovani kao administrator da bi ste razresili molbu");
+        }
+
         Optional<Molba> optionalMolba = molbaRepository.findById(id);
         Molba molba = optionalMolba.orElseThrow(EntityNotFoundException::new);
 

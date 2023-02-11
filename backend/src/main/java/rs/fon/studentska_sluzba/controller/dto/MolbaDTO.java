@@ -16,5 +16,6 @@ public record MolbaDTO(
         LocalDate datumOdgovora,
 
         String tipMolbe,
-        String statusMolbe) {
+        String statusMolbe,
+        StudentDTO student) {
 }
