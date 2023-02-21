@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
-  return (
+  if (localStorage.getItem('token')!=null){
+    return (
     <div className='Sidebar2'>
       <div class='Sidebar'>
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
@@ -57,6 +58,8 @@ function Sidebar() {
   </div>
     </div>
   );
+  } 
+  
 }
 
 export default Sidebar

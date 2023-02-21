@@ -21,20 +21,20 @@ function Login() {
     <div className='Login'>
       <h1>Login</h1>
         <form>
-          <div class="form-outline mb-4">
-            <input type="text" id="username" class="form-control" name='username' value={username} onChange={handleChangeUsername}/>
-            <label class="form-label" for="form2Example1">Korisnicko ime</label>
+          <div className="form-outline mb-4">
+            <input type="text" id="username" className="form-control" name='username' value={username} onChange={handleChangeUsername}/>
+            <label className="form-label" for="form2Example1">Korisnicko ime</label>
           </div>
 
-          <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" name='password' value={passwrod} onChange={handleChangePassword}/>
-            <label class="form-label" for="form2Example2">Lozinka</label>
+          <div className="form-outline mb-4">
+            <input type="password" id="form2Example2" className="form-control" name='password' value={passwrod} onChange={handleChangePassword}/>
+            <label className="form-label" for="form2Example2">Lozinka</label>
           </div>
 
          
 
 
-          <button type="button" class="btn btn-outline-danger" onClick={() => {
+          <button type="button" className="btn btn-outline-danger" onClick={() => {
             axios({
               method: 'post',
               url: '/api/v1/auth/authenticate',
@@ -46,7 +46,7 @@ function Login() {
             }).then((response) => {
               console.log(response);
               localStorage.setItem('token', response.data.token);
-              //localStorage.setItem('isAdmin', response.data.isAdmin);
+              localStorage.setItem('isAdmin', response.data.isAdmin);
               window.location.href = "/Obavestenja";
             }, (error) => {
               console.log(error);
@@ -56,7 +56,7 @@ function Login() {
 
         </form>
         <br></br>
-         <div class="poruka">
+         <div className="poruka">
             <h4><b>{poruka}</b></h4>
           </div>
     </div>

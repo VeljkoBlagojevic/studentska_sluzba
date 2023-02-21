@@ -24,7 +24,7 @@ public class SecurityConfiguration {
         http
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/gradovi/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/gradovi/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/v1/obavestenja/**").hasAuthority("ADMIN")

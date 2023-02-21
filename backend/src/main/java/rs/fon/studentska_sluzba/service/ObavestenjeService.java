@@ -6,6 +6,7 @@ import rs.fon.studentska_sluzba.domain.Obavestenje;
 import rs.fon.studentska_sluzba.repository.ObavestenjeRepository;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -18,7 +19,7 @@ public class ObavestenjeService {
     }
 
     public List<Obavestenje> getSvaObavestenja() {
-        return obavestenjeRepository.findAll();
+        return obavestenjeRepository.findAll().stream().sorted(Comparator.comparing(Obavestenje::getDatum).reversed()).toList();
     }
 
     public Obavestenje getObavestenjeSaId(Long id) {

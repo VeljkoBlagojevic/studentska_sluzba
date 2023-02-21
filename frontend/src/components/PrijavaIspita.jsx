@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const PrijavaIspita = () => {
-    const[data, setData] = useState([]);
-    const[dataPrijavljeni, setDataPrijavljeni] =
-    useState([]);
 
+
+function PrijavaIspita(){
+    const[data, setData] = useState([]);
+    const[dataPrijavljeni, setDataPrijavljeni] = useState([]);
+    function update(){
+      axios({
+        method: 'get',
+        url: '/api/v1/prijave',
+        baseURL: 'http://localhost:8080',
+        data: {},
+        headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
+      }).then((response) => {
+        console.log(response);
+        setDataPrijavljeni(response.data)
+        console.log(response.data);
+      }, (error) => {
+        console.log(error);
+      }); 
+    }
     useEffect(() => {
         axios({
             method: 'get',
@@ -32,8 +47,8 @@ const PrijavaIspita = () => {
             console.log(response.data);
           }, (error) => {
             console.log(error);
-          });
-    })
+          }); 
+    }, [])
 
     function prijaviIspit(index){
       axios({
@@ -48,6 +63,7 @@ const PrijavaIspita = () => {
         },
         headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
       }).then((response) => {
+        update();
       }, (error) => {
         console.log(error);
       });
@@ -62,6 +78,7 @@ const PrijavaIspita = () => {
         },
         headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
       }).then((response) => {
+        update();
       }, (error) => {
         console.log(error);
       });
@@ -90,6 +107,7 @@ const PrijavaIspita = () => {
                     <th scope="col">#</th>
                     <th scope="col">Predmet</th>
                     <th scope="col">ESPB</th>
+                    <th scope="col">Ponisti prijavu</th>
                 </tr>
             </thead>
             <tbody>

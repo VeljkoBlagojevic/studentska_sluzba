@@ -4,11 +4,10 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import SidebarAdmin from './componentsAdmin/SidebarAdmin';
 import Login from './components/Login';
-import Ispiti from './components/Ispiti';
 import PrijavaIspita from './components/PrijavaIspita';
 import MolbeUObradi from './components/MolbeUObradi';
 import MolbeIzdate from './components/MolbeIzdate';
-import MolbeAdmin from './componentsAdmin/MolbeAdmin';
+import MolbeUObradiAdmin from './componentsAdmin/MolbeUObradiAdmin';
 import Student from './components/Student2';
 import UnosMolbe from './components/UnosMolbe';
 import BiranjePredmeta from './components/BiranjePredmeta';
@@ -21,24 +20,24 @@ import IspitiNeuspesno from './components/IspitiNeuspesno';
 import UnosObavestenja from './componentsAdmin/UnosObavestenja';
 import ONama from './components/ONama';
 import Analitika from './components/Analitika';
-import UpisiOcenu from './componentsAdmin/UpisiOcenu';
 import IzmeniPodatke from './componentsAdmin/IzmeniPodatke';
 import PodaciOStudentu from './componentsAdmin/PodaciOStudentu';
 import Admin from './components/Admin';
+import PrikazPrijava from './componentsAdmin/PrikazPrijava';
+import MolbeIzdateAdmin from './componentsAdmin/MolbeIzdateAdmin';
+
 
 const urlBase = "localhost:8080";
 
 function App() {
-  //OVAJ IF TREBA DA PROVERI DA LI JE U PITANJU ADMIN ILI NE!!!
-  //AKO NIJE ADMIN
-  if(false){
+  if(localStorage.getItem('isAdmin') == 'false'){
     return (
-    <div class='Page'>
+    <div className='Page'>
       <BrowserRouter className='App'>
-        <div class='NavBar'><Navbar/></div>
-        <div class='Main'>
-          <div class='SideBar'><Sidebar/></div>
-          <div class='CenterComponent'>
+        <div className='NavBar'><Navbar/></div>
+        <div className='Main'>
+          <div className='SideBar'><Sidebar/></div>
+          <div className='CenterComponent'>
             <Routes>
             <Route path='/' element={<Login/>} />
               <Route path='/krajRada' element={<Login/>} />
@@ -54,7 +53,6 @@ function App() {
               <Route path='/obavestenja' element={<Obavestenja/>} />
               <Route path='/oNama' element = {<ONama/>}/>
               <Route path='/analitika' element={<Analitika/>}></Route>
-              <Route path='/admin' element={<Admin/>}></Route>
             </Routes>
           </div>
         </div>
@@ -62,27 +60,27 @@ function App() {
     </div>
     );
   }
-  //AKO JESTE ADMIN
   else{
     return (
-      <div class='Page'>
+      <div className='Page'>
         <BrowserRouter className='App'>
-          <div class='NavBar'><Navbar/></div>
-          <div class='Main'>
-            <div class='SideBar'><SidebarAdmin/></div>
-            <div class='CenterComponent'>
+          <div className='NavBar'><Navbar/></div>
+          <div className='Main'>
+            <div className='SideBar'><SidebarAdmin/></div>
+            <div className='CenterComponent'>
               <Routes>
               <Route path='/' element={<Login/>} />
                 <Route path='/krajRada' element={<Login/>} />
-                <Route path='/upisiOcenu' element={<UpisiOcenu/>} />
-                <Route path='/molbeUObradi' element={<MolbeAdmin/>} />
-                <Route path='/molbeIzdate' element={<MolbeIzdate/>} />
+                <Route path='/upisiOcenu' element={<PrikazPrijava/>} />
+                <Route path='/molbeUObradi' element={<MolbeUObradiAdmin/>} />
+                <Route path='/molbeIzdate' element={<MolbeIzdateAdmin/>} />
                 <Route path='/student' element={<Student/>} />
                 <Route path='/obavestenja' element={<ObavestenjaAdmin/>} />
                 <Route path='/oNama' element = {<ONama/>}/>
                 <Route path='/unosObavestenja' element={<UnosObavestenja/>} />
                 <Route path='/izmeniPodatke' element={<IzmeniPodatke/>}></Route>
                 <Route path='/podaciOStudentu' element={<PodaciOStudentu/>}></Route>
+                <Route path='/admin' element={<Admin/>}></Route>
               </Routes>
             </div>
           </div>

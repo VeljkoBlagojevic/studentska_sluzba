@@ -10,10 +10,13 @@ function UnosMolbe() {
       baseURL: 'http://localhost:8080',
       data: {
           //sadrzaj: document.getElementById("text").value
+          tipMolbe: document.getElementById("tipMolbe").value,
           pitanje: document.getElementById("text").value
+          //tip, pitanje
       },
       headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
     }).then((response) => {
+      window.location.href = "/molbeUObradi";
     }, (error) => {
       console.log(error);
     });
@@ -22,8 +25,8 @@ function UnosMolbe() {
     <div className='UnosMolbe'>
       <h1>Unos molbe</h1>
         <h5>Tip molbe:</h5>
-        <select name="language" id="language">
-          <option value="javascript">Promena podataka o studentu</option>
+        <select name="tipMolbe" id="tipMolbe">
+          <option value="PROMENA_PODATAKA_O_STUDENTU">PROMENA_PODATAKA_O_STUDENTU</option>
         </select>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Obrazlozenje</label>

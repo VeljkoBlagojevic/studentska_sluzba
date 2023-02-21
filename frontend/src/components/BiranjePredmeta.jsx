@@ -49,6 +49,7 @@ class BiranjePredmeta extends React.Component {
             headers: { 'Authorization': 'Bearer '+localStorage.getItem('token')}
           }).then((response) => {
             console.log(response);
+            window.location.href = '/mojiPredmeti';
           }, (error) => {
             console.log(error);
           });
@@ -77,10 +78,10 @@ class BiranjePredmeta extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet.naziv}</td><td>{el.predmet.espb}</td><td><input class="form-check-input" type="checkbox" id={index} checked={el.trenutnoSlusa} onChange={() => this.promeni(el.id)}></input></td></tr>)}
+                {this.state?.data.map((el, index) => <tr><td>{index+1}</td><td>{el.predmet.naziv}</td><td>{el.predmet.ESPB}</td><td><input className="form-check-input" type="checkbox" id={index} checked={el.trenutnoSlusa} onChange={() => this.promeni(el.id)}></input></td></tr>)}
             </tbody>
         </table>
-        <button type="button" class="btn btn-danger" onClick={() => this.izaberiPredmete()}>Potvrdi</button>
+        <button type="button" className="btn btn-danger" onClick={() => this.izaberiPredmete()}>Potvrdi</button>
     </div>
   );
 }}

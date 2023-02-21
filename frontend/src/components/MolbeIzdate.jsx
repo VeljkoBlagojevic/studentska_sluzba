@@ -26,20 +26,22 @@ function MolbeIzdate() {
         <div class="status">
             <form>
             <button class="statusMolbe" formaction="/molbeUObradi">U obradi</button>
-            <button class="statusMolbe" formaction="/molbeIzdate">Izdate</button>
+            <button class="statusMolbe" formaction="/molbeIzdate">Razresene</button>
             <button class="statusMolbe" formaction="/unesiMolbu">Podnesi molbu</button>
-        </form>
+          </form>
         </div>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Tip molbe</th>
                     <th scope="col">Pitanje</th>
+                    <th scope="col">Datum pitanja</th>
                     <th scope="col">Odgovor</th>
+                    <th scope="col">Datum odgovora</th>
                 </tr>
             </thead>
             <tbody>
-
+              {data?.map((el, index) => <tr><td>{el.tipMolbe}</td><td>{el.pitanje}</td><td>{el.datumPitanja}</td><td>{el.odgovor}</td><td>{el.datumOdgovora}</td></tr>)}
             </tbody>
         </table>
     </div>

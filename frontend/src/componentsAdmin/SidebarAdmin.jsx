@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SidebarAdmin() {
+  if (localStorage.getItem('token')!=null){
   return (
     <div className='Sidebar2'>
       <div class='Sidebar'>
@@ -20,7 +21,7 @@ function SidebarAdmin() {
           class="list-group-item list-group-item-action py-2 ripple"
           aria-current="true"
         >
-          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Upisi ocenu</span>
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Prijave</span>
         </Link>
         
         <Link to="/molbeUObradi" class="list-group-item list-group-item-action py-2 ripple"
@@ -36,7 +37,7 @@ function SidebarAdmin() {
           <i class="fas fa-chart-pie fa-fw me-3"></i><span>O Fakultetu</span></Link>
         
         <Link to="/admin" class="list-group-item list-group-item-action py-2 ripple">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>ADMIN</span></Link>
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>IP adresa</span></Link>
 
         <Link to="/krajRada" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-pie fa-fw me-3"></i><span>Kraj rada</span></Link>
@@ -48,6 +49,7 @@ function SidebarAdmin() {
   </div>
     </div>
   );
+  }
 }
 
 export default SidebarAdmin

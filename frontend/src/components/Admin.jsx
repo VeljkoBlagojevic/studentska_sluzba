@@ -5,6 +5,7 @@ const Admin = () => {
   const [IPAdresa, setIPAdresa] = useState("");
   const [dugme1Text, setDugme1Text] = useState("Prikazi trenutnu javnu IP adresu");
   const [dugme2Text, setDugme2Text] = useState("Prikaži dodatne informacije o adresi");
+  const [poruka, setPoruka] = useState("");
 
   const [IPInfo, setIPInfo] = useState({
     asn: '',
@@ -27,7 +28,10 @@ const Admin = () => {
     axios.get("https://api.ipify.org/?format=json").then((response) =>{
       setIPAdresa(response.data.ip)
       setDugme1Text("Sakrij trenutnu javnu IP adresu")
-    })
+      setPoruka('')
+    }, (error) => {
+            console.log(error);
+          });
     } else {
     setIPAdresa("")
     console.log("Sakrivena ip adresa.")
@@ -43,7 +47,7 @@ const Admin = () => {
   }
   const dugme2Action = () => {
     if(IPAdresa === "" && dugme2Text === "Prikaži dodatne informacije o adresi"){
-      alert("Nije poznata IP adresa. Da biste dobili ove podatke, pritisnite prvo dugme")
+      setPoruka('Nije poznata IP adresa. Da biste dobili ove podatke, pritisnite prvo dugme');
     } else if(dugme2Text === "Prikaži dodatne informacije o adresi"){
       getIPDATA();
     } else {
@@ -78,6 +82,9 @@ const Admin = () => {
     <br />
     <h2 >{IPAdresa}</h2>
     <button className='btn btn-danger' onClick={dugme2Action}>{dugme2Text}</button>
+    <div className="poruka">
+            <h4><b>{poruka}</b></h4>
+          </div>
     <br />
     <br />
       {IPInfo.asn === '' ? <></> : (

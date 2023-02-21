@@ -52,4 +52,10 @@ public class PrijavaController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @PostMapping
+    public ResponseEntity<Void> dodajPrijavu(@RequestBody PredmetDTO predmetDTO) {
+        prijavaService.dodajPrijavu(predmetMapper.DTOToEntity(predmetDTO));
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 }

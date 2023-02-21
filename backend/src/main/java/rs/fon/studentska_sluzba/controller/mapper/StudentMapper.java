@@ -28,6 +28,7 @@ public class StudentMapper implements Mapper<Student, StudentDTO> {
 
     @Override
     public Student DTOToEntity(StudentDTO studentDTO) {
+        if(studentDTO == null) return new Student();
         return Student.builder()
                 .id(studentDTO.id())
                 .ime(studentDTO.ime())
