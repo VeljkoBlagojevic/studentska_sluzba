@@ -8,6 +8,8 @@ import rs.fon.studentska_sluzba.repository.PredmetRepository;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
 
 import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,14 +35,14 @@ public class PrijavaService {
         studentRepository.save(trenutniStudent);
     }
 
-    public Collection<Predmet> getPrijave() {
+    public Set<Predmet> getPrijave() {
         if (studentService.jelTrenutniKorisnikAdmin())
             return studentRepository
                     .findAll()
                     .stream()
                     .map(Student::getPrijave)
                     .flatMap(Collection::stream)
-                    .collect(Collectors.toList());
+                    .collect(Collectors.toSet());
 
         return studentService.getTrenutniStudent().getPrijave();
     }
@@ -109,5 +111,13 @@ public class PrijavaService {
         return true;
     }
 
+
+    public Map<Student, Set<Predmet>> getPrijaveZaAdmina() {
+        return studentRepository.findAll()
+                .stream()
+                .filter(student -> !student.equals(studentRepository.findById(0L).get()))
+                .collect(Collectors.toMap(student -> student, Student::getPrijave));
+
+    }
 
 }

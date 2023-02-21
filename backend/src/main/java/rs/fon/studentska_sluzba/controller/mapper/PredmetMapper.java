@@ -4,6 +4,10 @@ import org.springframework.stereotype.Component;
 import rs.fon.studentska_sluzba.controller.dto.PredmetDTO;
 import rs.fon.studentska_sluzba.domain.Predmet;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Component
 public class PredmetMapper implements Mapper<Predmet, PredmetDTO> {
     @Override
@@ -19,4 +23,13 @@ public class PredmetMapper implements Mapper<Predmet, PredmetDTO> {
                 .ESPB(predmetDTO.ESPB())
                 .build();
     }
+
+    public Set<PredmetDTO> entitiesToDTOs(Set<Predmet> entities) {
+        return entities.stream().map(this::entityToDTO).collect(Collectors.toSet());
+    }
+
+    public Set<Predmet> DTOsToEntities(Set<PredmetDTO> dtos) {
+        return dtos.stream().map(this::DTOToEntity).collect(Collectors.toSet());
+    }
+
 }
