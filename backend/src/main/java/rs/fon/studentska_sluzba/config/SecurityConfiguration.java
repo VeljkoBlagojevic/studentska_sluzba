@@ -24,13 +24,14 @@ public class SecurityConfiguration {
         http
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/v1/**").permitAll()
+                        .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/gradovi/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/gradovi/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/v1/obavestenja/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/obavestenja/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.PATCH, "/api/v1/molbe/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.PATCH, "/api/v1/studenti/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/prijave/admin**").hasAuthority("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
