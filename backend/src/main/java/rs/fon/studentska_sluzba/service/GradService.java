@@ -7,18 +7,23 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Grad;
+import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.GradRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GradService {
 
     private final GradRepository gradRepository;
 
+    private final Logger logger;
+
     @Autowired
-    public GradService(GradRepository gradRepository) {
+    public GradService(GradRepository gradRepository, Logger logger) {
         this.gradRepository = gradRepository;
+        this.logger = logger;
     }
 
     public List<Grad> findAll() {
@@ -31,18 +36,32 @@ public class GradService {
     }
 
     public Grad getGradSaId(Long id) {
-        return gradRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        return gradRepository.findById(id).orElseThrow(() -> {
+            EntityNotFoundException exception = new EntityNotFoundException("Nije pronadjen grad sa id = " + id);
+            logger.error(exception);
+            return exception;
+        });
     }
 
     public Grad ubaciGrad(Grad grad) {
-        return gradRepository.save(grad);
+        try {
+            Grad sacuvaniGrad = gradRepository.save(grad);
+            logger.info("Uspesno sacuvan grad = " + sacuvaniGrad);
+            return sacuvaniGrad;
+        } catch (Exception e) {
+            logger.error(e);
+            throw e;
+        }
     }
 
     public boolean obrisiGradSaId(Long id) {
-        if (gradRepository.findById(id).isPresent()) {
+        Optional<Grad> optionalGrad = gradRepository.findById(id);
+        if (optionalGrad.isPresent()) {
             gradRepository.deleteById(id);
+            logger.info("Grad obrisan sa id = " + id);
             return true;
         }
+        logger.error(new EntityNotFoundException("Nije pronadjen grad sa id = " + id));
         return false;
     }
 

@@ -4,6 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Predmet;
 import rs.fon.studentska_sluzba.domain.Student;
+import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.PredmetRepository;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
 
@@ -20,19 +21,24 @@ public class PrijavaService {
 
     private final PredmetRepository predmetRepository;
 
-    public PrijavaService(StudentRepository studentRepository, StudentService studentService, PredmetRepository predmetRepository) {
+    private final Logger logger;
+
+    public PrijavaService(StudentRepository studentRepository, StudentService studentService, PredmetRepository predmetRepository, Logger logger) {
         this.studentRepository = studentRepository;
         this.studentService = studentService;
         this.predmetRepository = predmetRepository;
+        this.logger = logger;
     }
 
     public void dodajPrijavu(Predmet prijava) {
         Student trenutniStudent = studentService.getTrenutniStudent();
         if (trenutniStudent.getPrijave().contains(prijava)) {
+            logger.error(new Exception("Prijava se vec nalazi u sistemu"));
             return;
         }
         trenutniStudent.getPrijave().add(prijava);
         studentRepository.save(trenutniStudent);
+        logger.info("Uspesno sacuvana prijava");
     }
 
     public Set<Predmet> getPrijave() {
@@ -78,6 +84,7 @@ public class PrijavaService {
                                     .map(Predmet::getId)
                                     .toList()
                                     .contains(id))) {
+                logger.error(new EntityNotFoundException("Nije pronadjena prijava sa id " + id));
                 return false;
             } else {
                 Student pronadjedniStudent = studentRepository
@@ -87,27 +94,43 @@ public class PrijavaService {
                                 student.getPrijave()
                                         .stream()
                                         .anyMatch(predmet -> predmet.getId().equals(id)))
-                        .findAny().orElseThrow(EntityNotFoundException::new);
+                        .findAny().orElseThrow(() -> {
+                            EntityNotFoundException errorCause = new EntityNotFoundException("Nije pronadjena prijava sa id " + id);
+                            logger.error(errorCause);
+                            return errorCause;
+                        });
 
-                Predmet pronadjedniPredmetZaUklanjanje = predmetRepository.findById(id).get();
+                Predmet pronadjedniPredmetZaUklanjanje = predmetRepository.findById(id).orElseThrow(() -> {
+                    EntityNotFoundException errorCause = new EntityNotFoundException("Nije pronadjen predmet sa id " + id);
+                    logger.error(errorCause);
+                    return errorCause;
+                });
 
                 if (!pronadjedniStudent.getPrijave().remove(pronadjedniPredmetZaUklanjanje)) {
+                    logger.error(new EntityNotFoundException("Nije uspelo izbacivanje jer ne postoji predmet = " +pronadjedniPredmetZaUklanjanje));
                     return false;
                 }
                 studentRepository.save(pronadjedniStudent);
+                logger.info("Uspesno uklanjanje predmeta = " + pronadjedniPredmetZaUklanjanje);
                 return true;
             }
         }
 
         Student trenutniStudent = studentService.getTrenutniStudent();
 
-        Predmet predmetIzBaze = predmetRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        Predmet predmetIzBaze = predmetRepository.findById(id).orElseThrow(() -> {
+            EntityNotFoundException errorCause = new EntityNotFoundException("Nije pronadjen predmet sa id " + id);
+            logger.error(errorCause);
+            return errorCause;
+        });
 
         if (!trenutniStudent.getPrijave().remove(predmetIzBaze)) {
+            logger.error(new EntityNotFoundException("Nije uspelo izbacivanje jer ne postoji predmet = " + predmetIzBaze));
             return false;
         }
 
         studentRepository.save(trenutniStudent);
+        logger.info("Uspesno uklanjanje predmeta = " + predmetIzBaze);
         return true;
     }
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.NepolozeniPredmet;
 import rs.fon.studentska_sluzba.domain.Predmet;
 import rs.fon.studentska_sluzba.domain.Student;
+import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.NepolozeniPredmetRepository;
 
 import java.util.List;
@@ -19,10 +20,13 @@ public class PredmetService {
 
     private final StudentService studentService;
 
+    private final Logger logger;
+
     @Autowired
-    public PredmetService(NepolozeniPredmetRepository nepolozeniPredmetRepository, StudentService studentService) {
+    public PredmetService(NepolozeniPredmetRepository nepolozeniPredmetRepository, StudentService studentService, Logger logger) {
         this.nepolozeniPredmetRepository = nepolozeniPredmetRepository;
         this.studentService = studentService;
+        this.logger = logger;
     }
 
     public List<Predmet> getTrenutnoSlusani() {
@@ -78,7 +82,9 @@ public class PredmetService {
 
     public NepolozeniPredmet dodajZaSlusanje(NepolozeniPredmet nepolozeniPredmet) {
         nepolozeniPredmet.setStudent(studentService.getTrenutniStudent());
-        return nepolozeniPredmetRepository.save(nepolozeniPredmet);
+        NepolozeniPredmet sacuvanNepolozeniPredmet = nepolozeniPredmetRepository.save(nepolozeniPredmet);
+        logger.info("Dodat za slusanje predmet = " + sacuvanNepolozeniPredmet.getPredmet().getNaziv());
+        return sacuvanNepolozeniPredmet;
     }
 
     public Page<Predmet> getTrenutnoSlusani(Integer pageNumber, Integer pageSize) {

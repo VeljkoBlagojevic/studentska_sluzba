@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Molba;
 import rs.fon.studentska_sluzba.domain.StatusMolbe;
 import rs.fon.studentska_sluzba.domain.Student;
+import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.MolbaRepository;
 
 import java.time.LocalDate;
@@ -18,23 +19,37 @@ public class MolbaService {
 
     private final StudentService studentService;
 
-    public MolbaService(MolbaRepository molbaRepository, StudentService studentService) {
+    private final Logger logger;
+
+
+    public MolbaService(MolbaRepository molbaRepository, StudentService studentService, Logger logger) {
         this.molbaRepository = molbaRepository;
         this.studentService = studentService;
+        this.logger = logger;
     }
 
     public List<Molba> findAll() {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin()) {
             return molbaRepository.findAll();
+        }
         Student trenutniStudent = studentService.getTrenutniStudent();
         return molbaRepository.findByStudent(trenutniStudent);
     }
 
     public Molba getMolbaSaId(Long id) {
-        if(studentService.jelTrenutniKorisnikAdmin())
-            return molbaRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        if (studentService.jelTrenutniKorisnikAdmin()) {
+            return molbaRepository.findById(id).orElseThrow(() -> {
+                EntityNotFoundException exception = new EntityNotFoundException();
+                logger.error(exception);
+                return exception;
+            });
+        }
         Student trenutniStudent = studentService.getTrenutniStudent();
-        return molbaRepository.findByStudentAndId(trenutniStudent, id).orElseThrow(EntityNotFoundException::new);
+        return molbaRepository.findByStudentAndId(trenutniStudent, id).orElseThrow(() -> {
+            EntityNotFoundException exception = new EntityNotFoundException();
+            logger.error(exception);
+            return exception;
+        });
     }
 
     public Molba dodajMolbuUObradi(Molba molba) {
@@ -45,19 +60,24 @@ public class MolbaService {
 
         molba.setStatusMolbe(StatusMolbe.U_OBRADI);
 
-        return molbaRepository.save(molba);
+        Molba sacuvanaMolba = molbaRepository.save(molba);
+
+        logger.info("Uspesno sacuvana molba sa id = " + sacuvanaMolba.getId());
+        return sacuvanaMolba;
     }
 
     public boolean obrisiMolbuSaId(Long id) {
         if (molbaRepository.findById(id).isPresent()) {
             molbaRepository.deleteById(id);
+            logger.info("Uspesno obrisana molba sa id: " + id);
             return true;
         }
+        logger.error(new EntityNotFoundException("Nije pronadjena molba sa id: " + id));
         return false;
     }
 
     public List<Molba> findAllUObradi() {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin())
             return molbaRepository
                     .findAll()
                     .stream()
@@ -73,13 +93,12 @@ public class MolbaService {
     }
 
     public List<Molba> findAllRazresene() {
-        if(studentService.jelTrenutniKorisnikAdmin())
+        if (studentService.jelTrenutniKorisnikAdmin())
             return molbaRepository
                     .findAll()
                     .stream()
                     .filter(molba -> molba.getStatusMolbe().equals(StatusMolbe.RAZRESENA))
                     .toList();
-
 
         Student trenutniStudent = studentService.getTrenutniStudent();
         return molbaRepository
@@ -90,18 +109,24 @@ public class MolbaService {
     }
 
     public Molba razresiMolbu(Molba molba) {
-        if(!studentService.jelTrenutniKorisnikAdmin()) {
-            throw new RuntimeException("Niste ulogovani kao administrator da bi ste razresili molbu");
+        if (!studentService.jelTrenutniKorisnikAdmin()) {
+            RuntimeException exception = new RuntimeException("Niste ulogovani kao administrator da bi ste razresili molbu");
+            logger.error(exception);
+            throw exception;
         }
 
         molba.setDatumOdgovora(LocalDate.now());
         molba.setStatusMolbe(StatusMolbe.RAZRESENA);
-        return molbaRepository.save(molba);
+        Molba razresenaMolba = molbaRepository.save(molba);
+        logger.info("Uspesno razresili molbu sa id = " + razresenaMolba.getId());
+        return razresenaMolba;
     }
 
     public Molba razresiMolbu(Long id, String odgovor) {
-        if(!studentService.jelTrenutniKorisnikAdmin()) {
-            throw new RuntimeException("Niste ulogovani kao administrator da bi ste razresili molbu");
+        if (!studentService.jelTrenutniKorisnikAdmin()) {
+            RuntimeException exception = new RuntimeException("Niste ulogovani kao administrator da bi ste razresili molbu");
+            logger.error(exception);
+            throw exception;
         }
 
         Optional<Molba> optionalMolba = molbaRepository.findById(id);

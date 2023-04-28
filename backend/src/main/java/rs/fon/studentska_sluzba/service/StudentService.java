@@ -1,6 +1,5 @@
 package rs.fon.studentska_sluzba.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,6 +16,7 @@ import java.util.Optional;
 @Service
 public class StudentService {
     private final StudentRepository studentRepository;
+
 
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;

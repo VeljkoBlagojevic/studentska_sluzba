@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Polaganje;
 import rs.fon.studentska_sluzba.domain.Student;
+import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.PolaganjeRepository;
 
 import java.util.List;
@@ -18,9 +19,12 @@ public class PolaganjeService {
 
     private final StudentService studentService;
 
-    public PolaganjeService(PolaganjeRepository polaganjeRepository, StudentService studentService) {
+    private final Logger logger;
+
+    public PolaganjeService(PolaganjeRepository polaganjeRepository, StudentService studentService, Logger logger) {
         this.polaganjeRepository = polaganjeRepository;
         this.studentService = studentService;
+        this.logger = logger;
     }
 
 
@@ -34,23 +38,35 @@ public class PolaganjeService {
 
     public Polaganje getPolaganjeSaId(Long id) {
         if (studentService.jelTrenutniKorisnikAdmin())
-            return polaganjeRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+            return polaganjeRepository.findById(id).orElseThrow(() -> {
+                EntityNotFoundException exception = new EntityNotFoundException("Nije pronadjeno polaganje sa id " + id);
+                logger.error(exception);
+                return exception;
+            });
 
         Student trenutniStudent = studentService.getTrenutniStudent();
-        return polaganjeRepository.findByStudentAndId(trenutniStudent, id).orElseThrow(EntityNotFoundException::new);
+        return polaganjeRepository.findByStudentAndId(trenutniStudent, id).orElseThrow(() -> {
+            EntityNotFoundException exception = new EntityNotFoundException("Nije pronadjeno polaganje sa id " + id);
+            logger.error(exception);
+            return exception;
+        });
     }
 
     public Polaganje ubaciPolaganje(Polaganje polaganje) {
         Student trenutniStudent = studentService.getTrenutniStudent();
         polaganje.setStudent(trenutniStudent);
-        return polaganjeRepository.save(polaganje);
+        Polaganje sacuvanoPolaganje = polaganjeRepository.save(polaganje);
+        logger.info("Uspesno cuvanje polaganja = " + sacuvanoPolaganje);
+        return sacuvanoPolaganje;
     }
 
     public boolean obrisiPolaganjeSaId(Long id) {
         if (polaganjeRepository.existsById(id)) {
             polaganjeRepository.deleteById(id);
+            logger.info("Uspesno brisanje polaganja sa id: " + id);
             return true;
         }
+        logger.error(new EntityNotFoundException("Nije pronadjeno polaganje sa id " + id));
         return false;
     }
 
