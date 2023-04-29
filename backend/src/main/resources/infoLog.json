@@ -6,6 +6,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -24,6 +25,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -42,6 +44,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -60,6 +63,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -78,6 +82,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -96,6 +101,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -114,6 +120,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -132,6 +139,7 @@
       "prezime": "Blagojevic",
       "jmbg": "0208000860069",
       "indeks": "0353/2019",
+      "datumRodjenja": null,
       "brojTelefona": "+381677116969",
       "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
       "licniEmail": "veljko@gmail.com",
@@ -142,5 +150,784 @@
     },
     "vreme": "28::Apr::2023 17::04::15",
     "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::09",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::09",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::10",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::10",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::11",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::12",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d8, naziv\u003dNapredno programiranje, ESPB\u003d4)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::12",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d5, naziv\u003dProgramiranje 2, ESPB\u003d6)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::13",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d7, naziv\u003dEngleski jezik 3, ESPB\u003d3)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::13",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d11, naziv\u003dInteligentni sistemi, ESPB\u003d5)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::14",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d9, naziv\u003dNeuronske mreze, ESPB\u003d5)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::15",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d2, naziv\u003dEkonomija, ESPB\u003d6)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::19",
+    "message": "Dodat za slusanje predmet \u003d Ekonomija"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::19",
+    "message": "Dodat za slusanje predmet \u003d Napredno programiranje"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::19",
+    "message": "Dodat za slusanje predmet \u003d Engleski jezik 3"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::19",
+    "message": "Dodat za slusanje predmet \u003d Neuronske mreze"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::19",
+    "message": "Dodat za slusanje predmet \u003d Programiranje 2"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 12::24::19",
+    "message": "Dodat za slusanje predmet \u003d Inteligentni sistemi"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::44",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::45",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::45",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::46",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::54",
+    "message": "Dodat za slusanje predmet \u003d Neuronske mreze"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::54",
+    "message": "Dodat za slusanje predmet \u003d Inteligentni sistemi"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::54",
+    "message": "Dodat za slusanje predmet \u003d Napredno programiranje"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::54",
+    "message": "Dodat za slusanje predmet \u003d Engleski jezik 3"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::54",
+    "message": "Dodat za slusanje predmet \u003d Ekonomija"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::06::54",
+    "message": "Dodat za slusanje predmet \u003d Programiranje 2"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::16",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d5, naziv\u003dProgramiranje 2, ESPB\u003d6)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::17",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d8, naziv\u003dNapredno programiranje, ESPB\u003d4)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::18",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d7, naziv\u003dEngleski jezik 3, ESPB\u003d3)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::20",
+    "message": "Uspesno uklanjanje predmeta \u003d Predmet(id\u003d2, naziv\u003dEkonomija, ESPB\u003d6)"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::21",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::22",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::22",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::22",
+    "message": "Uspesno sacuvana prijava"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::28",
+    "message": "Dodat za slusanje predmet \u003d Ekonomija"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::28",
+    "message": "Dodat za slusanje predmet \u003d Napredno programiranje"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::28",
+    "message": "Dodat za slusanje predmet \u003d Programiranje 2"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::28",
+    "message": "Dodat za slusanje predmet \u003d Neuronske mreze"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::28",
+    "message": "Dodat za slusanje predmet \u003d Inteligentni sistemi"
+  },
+  {
+    "trenutniKorisnik": {
+      "id": 1,
+      "ime": "Veljko",
+      "prezime": "Blagojevic",
+      "jmbg": "0208000860069",
+      "indeks": "0353/2019",
+      "datumRodjenja": null,
+      "brojTelefona": "+381677116969",
+      "studentskiEmail": "vb20190353@student.fon.bg.ac.rs",
+      "licniEmail": "veljko@gmail.com",
+      "slika": "https://media.licdn.com/dms/image/D4D03AQGfDciO9qccSg/profile-displayphoto-shrink_800_800/0/1665691382240?e\u003d1680739200\u0026v\u003dbeta\u0026t\u003dOmDSbHTkRPAUegG52SrowRDi8GiqjSDvE7c6OCQvL6k",
+      "imeRoditelja": "Borislav",
+      "mestoRodjenja": "Omoljica",
+      "username": "vb20190353"
+    },
+    "vreme": "29::Apr::2023 13::07::28",
+    "message": "Dodat za slusanje predmet \u003d Engleski jezik 3"
   }
 ]
