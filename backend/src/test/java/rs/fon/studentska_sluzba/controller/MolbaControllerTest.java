@@ -36,7 +36,7 @@ class MolbaControllerTest {
     private MolbaService molbaService;
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getAll() throws Exception {
         List<Molba> molbe = Arrays.asList(new Molba(1L,
                         "Pitanje 1",
@@ -78,7 +78,7 @@ class MolbaControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getById() throws Exception {
         Molba molba = new Molba(1L,
                 "Pitanje 1",
@@ -102,7 +102,7 @@ class MolbaControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getAllUObradi() throws Exception {
         List<Molba> molbe = Arrays.asList(new Molba(1L,
                         "Pitanje 1",
@@ -147,7 +147,7 @@ class MolbaControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getAllUObradiNeSvi() throws Exception {
         List<Molba> molbe = Arrays.asList(Molba.builder()
                         .id(1L)
@@ -188,7 +188,7 @@ class MolbaControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getAllRazresene() throws Exception {
         List<Molba> molbe = Arrays.asList(new Molba(1L,
                         "Pitanje 1",
@@ -233,7 +233,7 @@ class MolbaControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getAllRazreseneNeSvi() throws Exception {
         List<Molba> molbe = Arrays.asList(Molba.builder()
                         .id(1L)

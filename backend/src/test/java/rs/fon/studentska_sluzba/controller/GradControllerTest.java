@@ -34,7 +34,7 @@ class GradControllerTest {
     private GradService gradService;
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getAll() throws Exception {
         List<Grad> gradovi = Arrays.asList(new Grad(1L, "Beograd", 11000), new Grad(2L, "Novi Sad", 21000));
         when(gradService.findAll()).thenReturn(gradovi);
@@ -51,7 +51,7 @@ class GradControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "vb20190353", roles = "USER")
+    @WithMockUser(username = "vb20190353", authorities = "USER")
     void getGradSaId() throws Exception {
         Grad grad = new Grad(1L, "Beograd", 11000);
         when(gradService.getGradSaId(1L)).thenReturn(grad);
