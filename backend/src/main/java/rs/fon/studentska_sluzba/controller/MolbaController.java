@@ -49,12 +49,10 @@ public class MolbaController {
 
     @PatchMapping("/razresi")
     public ResponseEntity<MolbaDTO> razresiMolbu(@RequestBody MolbaDTO molbaDTO) {
-        System.out.println(molbaDTO);
         return new ResponseEntity<>(molbaMapper.entityToDTO(molbaService.razresiMolbu(molbaMapper.DTOToEntity(molbaDTO))), HttpStatus.CREATED);
     }
     @PatchMapping("/{id}/razresi")
     public ResponseEntity<MolbaDTO> razresiMolbu(@PathVariable Long id, @RequestBody String odgovor) {
-        System.out.println("dsafsadfsdfasdfsafdsfdsafdsaf "+odgovor);
         return new ResponseEntity<>(molbaMapper.entityToDTO(molbaService.razresiMolbu(id, odgovor)), HttpStatus.CREATED);
     }
 

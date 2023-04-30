@@ -96,16 +96,13 @@ class GradControllerTest {
     void obrisiGradNepostojeci(Long id) throws Exception {
         when(gradService.obrisiGradSaId(id)).thenReturn(false);
 
-        mockMvc.perform(delete("/api/v1/gradovi/{id}", 999L))
+        mockMvc.perform(delete("/api/v1/gradovi/{id}", id))
                 .andExpect(status().isNotFound());
     }
 
     @Test
     @WithMockUser(username = "aa00000000", authorities = "ADMIN")
     void obrisiGrad() throws Exception {
-        List<Grad> gradoviPreBrisanja = Arrays.asList(new Grad(1L, "Beograd", 11000), new Grad(2L, "Novi Sad", 21000));
-        List<Grad> gradoviPosleBrisanja = List.of(new Grad(2L, "Novi Sad", 21000));
-
         when(gradService.obrisiGradSaId(1L)).thenReturn(true);
 
         mockMvc.perform(delete("/api/v1/gradovi/{id}", 1L))
