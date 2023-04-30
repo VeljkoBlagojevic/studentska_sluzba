@@ -1,6 +1,6 @@
 package rs.fon.studentska_sluzba.service;
 
-import jakarta.persistence.EntityNotFoundException;
+import rs.fon.studentska_sluzba.exception.EntityNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
