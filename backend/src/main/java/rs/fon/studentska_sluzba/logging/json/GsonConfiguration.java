@@ -12,9 +12,13 @@ public class GsonConfiguration {
 
     @Bean
     public GsonBuilderCustomizer typeAdapterRegistration() {
-        return builder -> builder.registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
-                .registerTypeAdapter(LocalDate.class, new LocalDateSerializer())
-                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer())
-                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer());
+        return builder -> {
+            builder.registerTypeAdapter(LocalDate.class, new LocalDateSerializer());
+            builder.registerTypeAdapter(LocalDate.class, new LocalDateDeserializer());
+            builder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer());
+            builder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer());
+            builder.setLenient();
+            builder.setPrettyPrinting();
+        };
     }
 }

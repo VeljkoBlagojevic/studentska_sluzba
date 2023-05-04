@@ -1,8 +1,8 @@
 package rs.fon.studentska_sluzba.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Obavestenje;
+import rs.fon.studentska_sluzba.exception.EntityNotFoundException;
 import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.ObavestenjeRepository;
 
