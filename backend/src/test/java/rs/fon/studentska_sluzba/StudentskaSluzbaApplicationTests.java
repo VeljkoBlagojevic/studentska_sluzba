@@ -47,6 +47,16 @@ class StudentskaSluzbaApplicationTests {
 	void hasPredmetControllerConfigured(ApplicationContext context) {
 		assertThat(context.getBean(PredmetController.class)).isNotNull();
 	}
+	@Test
+	void hasPrijavaControllerConfigured(ApplicationContext context) {
+		assertThat(context.getBean(PrijavaController.class)).isNotNull();
+	}
+
+
+	@Test
+	void hasStudentControllerConfigured(ApplicationContext context) {
+		assertThat(context.getBean(StudentController.class)).isNotNull();
+	}
 
 
 }
