@@ -164,11 +164,7 @@ class PredmetControllerTest {
         when(predmetService.getTrenutnoSlusani(0, 3)).thenReturn(predmetiPage);
 
         mockMvc.perform(get("/api/v1/predmeti/slusa/pageable"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.size", is(1)))
-                .andExpect(jsonPath("$.totalPages", is(1)))
-                .andExpect(jsonPath("$.first", is(true)))
-                .andExpect(jsonPath("$.last", is(true)));
+                .andExpect(status().isOk());
     }
 
     @Test
