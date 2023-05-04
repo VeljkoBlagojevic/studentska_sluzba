@@ -47,7 +47,7 @@ public class PrijavaController {
     }
 
     @GetMapping("/adminList")
-    public ResponseEntity<List<PrijavaDTO>> getPrijaveZaAdminaList2() {
+    public ResponseEntity<List<PrijavaDTO>> getPrijaveZaAdminaList() {
         return ResponseEntity.ok(
                 prijavaService.getPrijaveZaAdmina()
                         .entrySet().stream()
@@ -57,7 +57,7 @@ public class PrijavaController {
     }
 
     @GetMapping("/adminList2")
-    public ResponseEntity<Set<Map.Entry<Student, Set<Predmet>>>> getPrijaveZaAdminaList() {
+    public ResponseEntity<Set<Map.Entry<Student, Set<Predmet>>>> getPrijaveZaAdminaList2() {
         Map<StudentDTO, Set<PredmetDTO>> map = new HashMap<>();
         List<Map.Entry<StudentDTO, Set<PredmetDTO>>> list = new ArrayList<>();
         return ResponseEntity.ok(prijavaService.getPrijaveZaAdmina().entrySet());
