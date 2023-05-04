@@ -1,7 +1,6 @@
 package rs.fon.studentska_sluzba.logging.json;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,7 +18,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,19 +35,13 @@ public class JsonLogger implements Logger {
 
     private final StudentMapper studentMapper;
 
-    private final Gson gson = new GsonBuilder()
-            .registerTypeAdapter(LocalDate.class, new LocalDateSerializer())
-            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer())
-            .registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
-            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer())
-            .setPrettyPrinting()
-            .setLenient()
-            .create();
+    private final Gson gson;
 
 
-    public JsonLogger(StudentService studentService, StudentMapper studentMapper) {
+    public JsonLogger(StudentService studentService, StudentMapper studentMapper, Gson gson) {
         this.studentService = studentService;
         this.studentMapper = studentMapper;
+        this.gson = gson;
     }
 
 

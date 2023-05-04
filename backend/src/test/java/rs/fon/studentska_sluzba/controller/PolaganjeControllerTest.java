@@ -1,5 +1,6 @@
 package rs.fon.studentska_sluzba.controller;
 
+import com.google.gson.Gson;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -27,7 +28,9 @@ import java.util.List;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -40,6 +43,9 @@ class PolaganjeControllerTest {
 
     @MockBean
     private PolaganjeService polaganjeService;
+
+    @Autowired
+    private Gson gson;
 
     @Test
     @WithMockUser(username = "aa00000000", authorities = "ADMIN")
@@ -168,20 +174,13 @@ class PolaganjeControllerTest {
 
         mockMvc.perform(post("/api/v1/polaganja")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"ocena\":7,\"predmet\":{\"id\":1,\"naziv\":\"SPA\",\"ESPB\":6}}"))
+                        .content(gson.toJson(polaganjeZaDodavanje)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.polozio", is(true)))
                 .andExpect(jsonPath("$.ocena", is(7)));
     }
 
-    @Test
-    @Disabled(value = "Nije dodata zabrana za POST request za usera")
-    @WithMockUser(username = "vb20190353", authorities = "USER")
-    void dodajPolaganjeUser() throws Exception {
-        mockMvc.perform(post("/api/v1/polaganje"))
-                .andExpect(status().isForbidden());
-    }
 
     @Test
     @WithMockUser(username = "aa00000000", authorities = "ADMIN")
@@ -210,7 +209,7 @@ class PolaganjeControllerTest {
                 .prezime("Blagojevic")
                 .build();
         Predmet ekonomija = new Predmet(3L, "Ekonomija", 6);
-        List<Polaganje> polaganja = Arrays.asList(
+        List<Polaganje> polaganja = List.of(
                 new Polaganje(3L, LocalDate.of(2022, 3, 3), false, 5, veljko, ekonomija));
 
         when(polaganjeService.getSvaNeuspesnaPolaganja()).thenReturn(polaganja);

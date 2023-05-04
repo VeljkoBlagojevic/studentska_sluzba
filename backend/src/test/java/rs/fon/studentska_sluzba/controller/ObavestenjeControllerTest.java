@@ -1,6 +1,7 @@
 package rs.fon.studentska_sluzba.controller;
 
 
+import com.google.gson.Gson;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,13 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.any;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -33,6 +38,9 @@ class ObavestenjeControllerTest {
 
     @MockBean
     private ObavestenjeService obavestenjeService;
+
+    @Autowired
+    private Gson gson;
 
     @Test
     @WithMockUser(username = "vb20190353", authorities = "USER")
@@ -90,7 +98,7 @@ class ObavestenjeControllerTest {
 
         mockMvc.perform(post("/api/v1/obavestenja")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"sadrzaj\": \"Molim vas nosite maske.\"}"))
+                        .content(gson.toJson(primljenoObavestenje)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.sadrzaj", is("Molim vas nosite maske.")))
@@ -102,7 +110,7 @@ class ObavestenjeControllerTest {
     void postObavestenjeZabranjenoUseru() throws Exception {
         mockMvc.perform(post("/api/v1/obavestenja")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"sadrzaj\": \"Molim vas nosite maske.\"}"))
+                        .content(gson.toJson(null)))
                 .andExpect(status().isForbidden());
     }
 

@@ -1,5 +1,6 @@
 package rs.fon.studentska_sluzba.controller;
 
+import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,7 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.any;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
@@ -32,6 +35,9 @@ class StudentControllerTest {
 
     @MockBean
     private StudentService studentService;
+
+    @Autowired
+    private Gson gson;
 
     @Test
     @WithMockUser(username = "aa00000000", authorities = "ADMIN")
@@ -92,7 +98,7 @@ class StudentControllerTest {
 
         mockMvc.perform(patch("/api/v1/studenti/{id}", 1)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"ime\": \"Veljko\"}"))
+                        .content(gson.toJson(noviAtributi)))
               .andExpect(status().isOk())
               .andExpect(jsonPath("$.ime", is("Veljko")));
     }

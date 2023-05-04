@@ -1,5 +1,6 @@
 package rs.fon.studentska_sluzba.controller;
 
+import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -19,7 +20,9 @@ import java.util.List;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -32,6 +35,9 @@ class GradControllerTest {
 
     @MockBean
     private GradService gradService;
+
+    @Autowired
+    private Gson gson;
 
     @Test
     @WithMockUser(username = "vb20190353", authorities = "USER")
@@ -71,7 +77,7 @@ class GradControllerTest {
 
         mockMvc.perform(post("/api/v1/gradovi")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"naziv\":\"Beograd\",\"zipcode\":11000}"))
+                        .content(gson.toJson(grad)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.naziv", is("Beograd")))
@@ -86,7 +92,7 @@ class GradControllerTest {
 
         mockMvc.perform(post("/api/v1/gradovi")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"naziv\":\"Beograd\",\"zipcode\":11000}"))
+                        .content(gson.toJson(grad)))
                 .andExpect(status().isForbidden());
     }
 

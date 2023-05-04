@@ -1,5 +1,6 @@
 package rs.fon.studentska_sluzba.controller;
 
+import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,7 +19,9 @@ import rs.fon.studentska_sluzba.service.PredmetService;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.everyItem;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
@@ -34,6 +37,9 @@ class PredmetControllerTest {
 
     @MockBean
     private PredmetService predmetService;
+
+    @Autowired
+    private Gson gson;
 
     @Test
     @WithMockUser(username = "aa00000000", authorities = "ADMIN")
@@ -192,7 +198,7 @@ class PredmetControllerTest {
 
         mockMvc.perform(patch("/api/v1/predmeti/slusa")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"id\":1,\"predmet\":{\"id\":1,\"naziv\":\"SPA\",\"ESPB\":6}}"))
+                .content(gson.toJson(nepolozeniPredmetZaObradu)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.trenutnoSlusa", is(true)));
     }
