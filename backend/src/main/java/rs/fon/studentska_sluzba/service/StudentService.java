@@ -1,6 +1,5 @@
 package rs.fon.studentska_sluzba.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -22,7 +21,6 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    @Autowired
     public List<Student> findAll() {
         return studentRepository.findAll();
     }
