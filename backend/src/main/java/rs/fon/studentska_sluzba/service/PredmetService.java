@@ -13,15 +13,39 @@ import rs.fon.studentska_sluzba.repository.NepolozeniPredmetRepository;
 
 import java.util.List;
 
+/**
+ * Sadrzi poslovnu logiku sa radom sa predmetima.
+ * <p>
+ * Klasa sluzi da manipulise, upravlja sa modelom i podacima vezanim sa predmetima.
+ * Omogucavama dodavanje, citanje, brisanje i menjanje informacija predmeta.
+ *
+ * @author VeljkoBlagojevic
+ */
 @Service
 public class PredmetService {
 
+    /**
+     * Broker baze podataka koji je posrednik ka tabeli NepolozeniPredmet.
+     */
     private final NepolozeniPredmetRepository nepolozeniPredmetRepository;
 
+    /**
+     * Referenca ka klasi koja vodi racuna o studentima i ulogovanim korisnicima.
+     */
     private final StudentService studentService;
 
+    /**
+     * Logger koji sacuvava sve potrebne informacije o izvrsenim koracima.
+     */
     private final Logger logger;
 
+    /**
+     * Parametrizovani konstruktor koji automatski injektuje sve zavinosti uz pomoc Springa.
+     *
+     * @param nepolozeniPredmetRepository Klasa koja implementira sve neophodne operacije sa radom i pristupom baze podataka.
+     * @param studentService Poslovna logika za manipulaciju sa studentima i prijavljenim korisnicima.
+     * @param logger Klasa za logovanje neophodnih informacija.
+     */
     @Autowired
     public PredmetService(NepolozeniPredmetRepository nepolozeniPredmetRepository, StudentService studentService, Logger logger) {
         this.nepolozeniPredmetRepository = nepolozeniPredmetRepository;
@@ -29,6 +53,14 @@ public class PredmetService {
         this.logger = logger;
     }
 
+    /**
+     * Metoda vraca listu svih predmeta koje student trenutno slusa.
+     * <p>
+     * Ukoliko korisnik sa Rolom 'ADMIN' pokusa da pristupi ovoj metodi, bice mu pruzena kompletna lista predmeta koje studenti slusaju.
+     * Ukoliko korisnik sa Rolom 'USER' pozove datu metodu, dobija sve predmete koje je on licno trenutno slusa.
+     *
+     * @return Listu predmeta koje korisnik slusa.
+     */
     public List<Predmet> getTrenutnoSlusani() {
         if(studentService.jelTrenutniKorisnikAdmin())
             return nepolozeniPredmetRepository
@@ -51,6 +83,14 @@ public class PredmetService {
 //                .toList();
     }
 
+    /**
+     * Metoda vraca listu svih nepolozenih predmeta za datog korisnika.
+     * <p>
+     * Ukoliko korisnik sa Rolom 'ADMIN' pokusa da pristupi ovoj metodi, bice mu pruzena kompletna lista svih nepolozenih predmeta u bazi podataka.
+     * Ukoliko korisnik sa Rolom 'USER' pozove datu metodu, dobija sve nepolozene predmete koji su vezani za njega.
+     *
+     * @return Listu nepolozenih predmeta za ulogovanog korisnika.
+     */
     public List<NepolozeniPredmet> getSveNepolozenePredmete() {
         if(studentService.jelTrenutniKorisnikAdmin())
             return nepolozeniPredmetRepository
@@ -80,6 +120,12 @@ public class PredmetService {
 //    }
 
 
+    /**
+     * Dodaje novi nepolozeni predmet za ulogovanog studenta.
+     *
+     * @param nepolozeniPredmet Novi nepolozeni predmet za perzistenciju.
+     * @return Nepolozeni predmet koji je sacuvan u bazi podataka.
+     */
     public NepolozeniPredmet dodajZaSlusanje(NepolozeniPredmet nepolozeniPredmet) {
         nepolozeniPredmet.setStudent(studentService.getTrenutniStudent());
         NepolozeniPredmet sacuvanNepolozeniPredmet = nepolozeniPredmetRepository.save(nepolozeniPredmet);
@@ -87,6 +133,16 @@ public class PredmetService {
         return sacuvanNepolozeniPredmet;
     }
 
+    /**
+     * Metoda vraca listu svih predmeta koje student trenutno slusa koriscenjem Pageable paterna.
+     * <p>
+     * Ukoliko korisnik sa Rolom 'ADMIN' pokusa da pristupi ovoj metodi, bice mu pruzena kompletna lista predmeta koje studenti slusaju.
+     * Ukoliko korisnik sa Rolom 'USER' pozove datu metodu, dobija sve predmete koje je on licno trenutno slusa.
+     *
+     * @param pageNumber Redni broj stranice.
+     * @param pageSize Velicina stranice paginacije.
+     * @return Paginaciju predmeta koje korisnik slusa trenutno.
+     */
     public Page<Predmet> getTrenutnoSlusani(Integer pageNumber, Integer pageSize) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
 
