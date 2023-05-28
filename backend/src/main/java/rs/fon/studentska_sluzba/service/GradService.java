@@ -1,12 +1,12 @@
 package rs.fon.studentska_sluzba.service;
 
-import rs.fon.studentska_sluzba.exception.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rs.fon.studentska_sluzba.domain.Grad;
+import rs.fon.studentska_sluzba.exception.EntityNotFoundException;
 import rs.fon.studentska_sluzba.logging.Logger;
 import rs.fon.studentska_sluzba.repository.GradRepository;
 

@@ -1,6 +1,5 @@
 package rs.fon.studentska_sluzba.service;
 
-import org.checkerframework.common.value.qual.IntRange;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,10 +13,7 @@ import rs.fon.studentska_sluzba.repository.PredmetRepository;
 import rs.fon.studentska_sluzba.repository.StudentRepository;
 
 import java.util.*;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 

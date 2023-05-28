@@ -12,11 +12,7 @@ import rs.fon.studentska_sluzba.domain.Predmet;
 import rs.fon.studentska_sluzba.domain.Student;
 import rs.fon.studentska_sluzba.service.PrijavaService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @CrossOrigin
 @RestController

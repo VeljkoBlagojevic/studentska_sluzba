@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 import rs.fon.studentska_sluzba.controller.dto.PredmetDTO;
 import rs.fon.studentska_sluzba.domain.Predmet;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
